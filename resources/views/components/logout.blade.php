@@ -1,0 +1,1 @@
+<button type="submit">Log out <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
