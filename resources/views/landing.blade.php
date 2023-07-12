@@ -1,13 +1,15 @@
 @extends('layouts.main')
 @section('content')
 
-
     <div class="landingContainer">
         <img src="{{asset ('media/backgroundIMG.png')}}" alt='background' />
         <div class="sidebar">
-        <h1>Welcome</h1>
+            <h1>Welcome</h1>
             <p>Disfruta de nuestros cursos con los mejores profesionales del sector</p>
-            <a href="{{ route('login') }}"><button class="botonAzul">SIGN IN</button></a>
+            <x-signinbutton />
+
+            <a href="{{ route('register') }}"><button class="botonAzul">REGISTRO</button></a>
+
             <button class="botonBlanco">GOOGLE AUTH</button>
         </div>
     </div>

@@ -12,20 +12,16 @@
 
 <body>
 
+    <header>
+
+
         <div class='headerContainer'>
             <a href="/"><x-logo /></a>
             <div class='derecha'>
                 <a class='link' href="/nosotros">Nosotros</a>
                 <a class='link' href="/faq">FAQ</a>
-                @auth
-                <x-logout />
-                @endauth
-                @guest
                 <x-signinbutton />
-                @endguest
-                @auth
                 <x-user />
-                @endauth
             </div>
         </div>
     </header>
