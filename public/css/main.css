@@ -127,11 +127,12 @@ button:hover {
   background-color: var(--color-base);
   position: absolute;
   top: 5em;
-  right: 2em;
+  right: 3em;
   padding: 0;
   font-size: 14px;
   padding: 1em;
   border: 1px solid lightgray;
+  box-shadow: .3em .3em .5em rgba(0,0,0,0.5);
 }
 
 .user-panel p {
