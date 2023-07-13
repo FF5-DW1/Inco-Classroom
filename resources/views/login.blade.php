@@ -10,7 +10,7 @@
           </div>
           <div>
             <p>Password</p>
-            <input type="text" class='input' />
+            <input type="password" class='input' />
           </div>
           <br />
           <x-loginbutton />
