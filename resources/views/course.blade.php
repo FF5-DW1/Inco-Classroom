@@ -22,9 +22,11 @@
       </div>
     </div>
   </div>
-  <x-leccion />
-  <x-leccion />
-  <x-plus3 />
+  <div class="lecciones">
+    <x-leccion />
+    <x-leccion />
+    <x-plus3 />
+  </div>
 </div>
 
 @endsection

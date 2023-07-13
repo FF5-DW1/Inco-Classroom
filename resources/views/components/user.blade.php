@@ -1,5 +1,5 @@
 <span class="user">
     <i class="fa-solid fa-user"></i>
-    User
+    {{Auth::user()->name}}
     <i class="fa-solid fa-chevron-down"></i>
 </span>

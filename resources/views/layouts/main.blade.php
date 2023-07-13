@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <link rel="stylesheet" href="{{ asset('css/main.css')}}" type="text/css">
     <script src="https://kit.fontawesome.com/ec241ea00e.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-
     <header>
-
-
         <div class='headerContainer'>
             <a href="/"><x-logo /></a>
             <div class='derecha'>
                 <a class='link' href="/nosotros">Nosotros</a>
                 <a class='link' href="/faq">FAQ</a>
-                <x-signinbutton />
+                @auth
                 <x-user />
+                @endauth
+                
+                @guest
+                <x-signinbutton />
+                @endguest
+                <div class="user-panel hidden">
+                    <p>Perfil</p>
+                    <p>Cambiar contraseña</p>
+                    @auth
+                            <x-logout />
+                            @endauth
+                </div>
             </div>
         </div>
     </header>
 
-
-
     <div class="mainContainerContent">
         @yield ('content')
     </div>
-
-    
-
-
-
 
     <footer class='footer'>
             <div>
@@ -47,25 +46,13 @@
             <div>
                 <x-logo />
             </div>
-            <div class='footerDcha'>  
+            <div class='footerDcha'>
                     <p>2022 INCO Academy Spain - Todos los derechos reservados.</p>
                     <a href="">Condiciones de uso y declaración de privacidad</a>
             </div>
-        
-    </footer>
-
-
-
-
-
-
-
-
-
 
     </footer>
-
-
+    <script src="{{asset('js/dom.js')}}"></script>
 </body>
 
 </html>

@@ -8,7 +8,6 @@
         <x-curso />
         <x-curso />
         <x-plus2 />
-        <x-plus />
     </div>
     <h2>Progreso</h2>
     <div class="progreso"></div>
