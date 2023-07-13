@@ -21,13 +21,13 @@
                 @guest
                 <x-signinbutton />
                 @endguest
+                @auth
                 <div class="user-panel hidden">
                     <p>Perfil</p>
                     <p>Cambiar contraseña</p>
-                    @auth
-                            <x-logout />
-                            @endauth
+                    <x-logout />
                 </div>
+                @endauth
             </div>
         </div>
     </header>
