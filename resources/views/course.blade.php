@@ -18,7 +18,7 @@
       </div>
       <div>
         <img src="{{asset('media/cropped-android-chrome-512x512-1.png')}}" alt="">
-        <a href="https://www.coursera.org/learn/asistencia-tecnica/lecture/pjqmU/que-es-la-ti">Coursera >></a>
+        <a href="https://www.coursera.org/learn/asistencia-tecnica/home/week/1">Coursera >></a>
       </div>
     </div>
   </div>
