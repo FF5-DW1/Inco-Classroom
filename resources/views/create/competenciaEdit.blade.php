@@ -3,8 +3,7 @@
 @section('title', 'Editar Competencia')
 
 @section ('content')
-<link rel="stylesheet" href="{{ asset('css/competenciaNew.css')}}" type="text/css">
-<form method="post" action="{{ route('home') }}">
+<form method="post" action="{{ route('home') }}" class="competenciaForm">
     @csrf
     <div>
         <label for="title">Title:</label>

@@ -274,9 +274,15 @@ button:hover {
     /* height: 100%; */
   }
 
-  .prog-curso {
+  .iconos {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    color: var(--color-base);
+  }
+
+  .iconos img {
+    height: 1em;
   }
 
   /* PÁGINA DE CURSOS */
@@ -433,6 +439,52 @@ button:hover {
 
   .plus .fa-plus {
     font-size: 60px;
+  }
+
+  /* AÑADIR COMPETENCIA */
+
+  .competenciaForm {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px; 
+    padding: 20px;
+    border: 1px solid var(--color-base);
+    border-radius: 5px;
+    background-color: #F5F5F5;
+}
+  
+.competenciaForm label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-base);
+    font-weight: bold;
+  }
+  
+  .competenciaForm input[type="text"],
+  .competenciaForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid var(--color-base);
+    border-radius: 3px;
+  }
+  
+  .competenciaForm textarea {
+    resize: vertical;
+  }
+  
+  .competenciaForm button[type="submit"] {
+    background-color: var(--color-base);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .competenciaForm button[type="submit"]:hover {
+    background-color: #143A7E;
   }
 
   /* PÁGINA RECURSOS */

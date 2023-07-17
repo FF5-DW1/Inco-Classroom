@@ -1,8 +1,8 @@
-const plegable = document.querySelector('.fa-chevron-down');
-const panel = document.querySelector('.user-panel');
+const plegableUser = document.querySelector('.plegableUser');
+const panelUser = document.querySelector('.user-panel');
 
-function plegarPanel() {
-    panel.classList.toggle('hidden');
+function plegarPanelUsuario() {
+    panelUser.classList.toggle('hidden');
 }
 
-plegable.addEventListener('click', plegarPanel);
+plegableUser.addEventListener('click', plegarPanelUsuario);

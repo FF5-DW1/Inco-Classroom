@@ -1,6 +1,6 @@
 /* test styling, adjust later  */
 
-form {
+.competenciaForm {
     max-width: 400px;
     margin: auto;
     margin-top: 100px;
@@ -11,15 +11,15 @@ form {
     background-color: #F5F5F5;
 }
   
-  form label {
+.competenciaForm label {
     display: block;
     margin-bottom: 5px;
     color: #1A45A3;
     font-weight: bold;
   }
   
-  form input[type="text"],
-  form textarea {
+  .competenciaForm input[type="text"],
+  .competenciaForm textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;
@@ -27,11 +27,11 @@ form {
     border-radius: 3px;
   }
   
-  form textarea {
+  .competenciaForm textarea {
     resize: vertical;
   }
   
-  form button[type="submit"] {
+  .competenciaForm button[type="submit"] {
     background-color: #1A45A3;
     color: #FFFFFF;
     padding: 10px 20px;
@@ -40,7 +40,7 @@ form {
     cursor: pointer;
   }
   
-  form button[type="submit"]:hover {
+  .competenciaForm button[type="submit"]:hover {
     background-color: #143A7E;
   }
   

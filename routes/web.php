@@ -75,7 +75,7 @@ Route::get('/cursos/{id}/edit', [CursoController::class, 'edit'])->name('cursos.
 Route::post('/cursos/{id}', [CursoController::class, 'update']);
 
 // Contenido del curso
-Route::get('/cursos/1', function () {
+Route::get('/cursos/{id}', function () {
     return view('course');
 })->name('modulos');
 
