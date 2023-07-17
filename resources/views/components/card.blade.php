@@ -15,6 +15,7 @@
         <img src="{{asset('media/cropped-android-chrome-512x512-1.png')}}" alt="">
         <a href="/home/{id}/edit"><x-editar /></a>
                 <a href="/cursos"><x-ver /></a>
+                <x-eliminar />
         </div>
     </div>
 @endforeach

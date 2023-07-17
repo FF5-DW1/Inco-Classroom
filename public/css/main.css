@@ -97,6 +97,10 @@ button:hover {
   display: none;
 }
 
+.fa-trash-can {
+  color: red;
+}
+
 /* HEADER */
 
 .headerContainer{
@@ -279,6 +283,7 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     color: var(--color-base);
+    font-size: 1.5em;
   }
 
   .iconos img {

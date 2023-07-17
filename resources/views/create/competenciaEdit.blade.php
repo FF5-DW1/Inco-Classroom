@@ -8,7 +8,7 @@
     <div>
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" required>
-        <!-- value="{{ old('title', $competencia["title"]) }}" -->
+        {{-- value="{{ old('title', $competencia["title"]) }}" --}}
     </div>
     <div>
         <label for="description">Description:</label>
