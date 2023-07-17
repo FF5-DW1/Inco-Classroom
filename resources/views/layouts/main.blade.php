@@ -52,7 +52,7 @@
             </div>
 
     </footer>
-    <script src="{{asset('js/dom.js')}}"></script>
+    <script src="{{asset('js/dom-layout.js')}}"></script>
 </body>
 
 </html>

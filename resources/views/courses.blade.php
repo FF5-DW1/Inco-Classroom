@@ -3,7 +3,7 @@
 
 <div class="paddingContainer">
     <a href="/home"><< Mis competencias</a>
-    <h1>Competencias TI <i class="fa-solid fa-chevron-down"></i></h1>
+    <h1>Competencias TI <i class="fa-solid fa-chevron-down plegableCursos"></i></h1>
     <div class="contents">
         <x-curso />
         <x-curso />
@@ -43,5 +43,6 @@
                 <h3>Semana 4 <i class="fa-solid fa-chevron-down"></i></h3>
     </div>
 </div>
+<script src="{{asset('js/dom-views.js')}}"></script>
 
 @endsection
