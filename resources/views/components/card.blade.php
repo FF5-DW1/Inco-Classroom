@@ -18,4 +18,5 @@
                 <x-eliminar />
         </div>
     </div>
+</div>
 @endforeach
