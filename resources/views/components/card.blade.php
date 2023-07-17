@@ -7,15 +7,15 @@
                 <h4>{{ $competencia["title"] }}</h4>
             </div>
             <div class="iconos">
-                    {{-- <i class="fa-solid fa-circle-notch" style="font-size: 30px"></i>
-                <span>60%</span> --}}
-                <i class="fa-solid fa-person-chalkboard"></i>
-        <i class="fa-solid fa-video"></i>
-        {{-- <i class="fa-solid fa-film"></i> --}}
-        <img src="{{asset('media/cropped-android-chrome-512x512-1.png')}}" alt="">
-        <a href="/home/{id}/edit"><x-editar /></a>
+                <div>
+                    <i class="fa-solid fa-circle-notch" style="font-size: 30px"></i>
+                <span style="font-size: 16px;">60%</span>
+                </div>
+                    <div>
+                        <a href="/home/{id}/edit"><x-editar /></a>
                 <a href="/cursos"><x-ver /></a>
                 <x-eliminar />
+                    </div>
         </div>
     </div>
 </div>
