@@ -4,6 +4,7 @@ use App\Http\Controllers\TestDatabaseController; //testing connection with to da
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CompetenciaController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,18 @@ Route::get('/cursos', function () {
     return view('courses');
 })->name('cursos');
 
+//Actions with competencias
+Route::get('/home/create', [CompetenciaController::class, 'create'])->name('home.create');
+Route::post('/home', [CompetenciaController::class, 'store']);
+Route::get('/home/{id}/edit', [CompetenciaController::class, 'edit'])->name('home.edit');
+Route::post('/home/{id}', [CompetenciaController::class, 'update']);
+
+//Actions with courses
+Route::get('/cursos/create', [CursoController::class, 'create'])->name('cursos.create');
+Route::post('/cursos', [CursoController::class, 'store']);
+Route::get('/cursos/{id}/edit', [CursoController::class, 'edit'])->name('cursos.edit');
+Route::post('/cursos/{id}', [CursoController::class, 'update']);
+
 // Contenido del curso
 Route::get('/cursos/1', function () {
     return view('course');
@@ -84,3 +97,5 @@ Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verify'])
 Route::post('/email/resend', [AuthController::class, 'resendVerification'])
     ->middleware(['auth', 'throttle:6,1'])
     ->name('verification.resend');
+
+

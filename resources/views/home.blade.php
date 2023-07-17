@@ -8,8 +8,6 @@
       <h2>Mis competencias</h2>
       <div class='grid'>
         <x-card />
-        <x-card />
-        <x-card />
         <x-plus />
       </div>
     </section>
@@ -17,9 +15,7 @@
       <h2>Otros talleres disponibles</h2>
       <div class='grid'>
         <x-card />
-        <x-card />
-        <x-card />
-        <x-card />
+        <x-plus />
       </div>
     </section>
   </div>

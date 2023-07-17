@@ -21,6 +21,16 @@ class Curso extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.curso');
+        $cursos = [
+            [
+                "title" => "Aspectos básicos de la asistencia técnica",
+                "duration" => "3",
+                "description" => "Primer curso de una serie que prepara para un rol en soporte de TI. Cubre hardware, software, resolución de problemas, servicio al cliente y preparación para entrevistas técnicas."
+            ],
+        ];
+
+        return view('components.curso', [
+            'cursos' => $cursos,
+        ]);
     }
 }

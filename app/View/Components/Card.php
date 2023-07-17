@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Competencia;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -19,8 +20,17 @@ class Card extends Component
     /**
      * Get the view / contents that represent the component.
      */
-    public function render(): View|Closure|string
-    {
-        return view('components.card');
+    public function render(): View|Closure|string {
+        
+        $competencias = Competencia::all(); 
+        // [
+        //     [
+        //         "title" => "Competencias TI"
+        //     ],
+        // ];
+
+        return view('components.card', [
+            'competencias' => $competencias,
+        ]);
     }
 }
