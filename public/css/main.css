@@ -104,6 +104,7 @@ button:hover {
 
 .paddingContainer {
   padding: 3em 4em;
+  background-color: var(--color-fondo);
 }
 
 .ver {
@@ -117,6 +118,7 @@ button:hover {
 
 .fa-trash-can {
   color: red;
+  cursor: pointer;
 }
 
 /* HEADER */
@@ -265,6 +267,7 @@ button:hover {
 
   .compContainer {
     padding: 2em 4em;
+    background-color: var(--color-fondo);
   }
 
   .competencias {
