@@ -38,9 +38,10 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-
+artisan 
 db
 docker-compose.yml
 Dockerfile-php
 default.conf
 node_modules
+.DS_Store
