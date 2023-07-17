@@ -3,9 +3,8 @@
 
 <div class="paddingContainer">
     <a href="/home"><< Mis competencias</a>
-    <h1>Competencias TI <i class="fa-solid fa-chevron-down"></i></h1>
+    <h1>{{ $competencia->title }}<i class="fa-solid fa-chevron-down"></i></h1>
     <div class="contents">
-        <x-curso />
         <x-curso />
         <x-plus2 />
     </div>

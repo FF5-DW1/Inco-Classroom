@@ -13,9 +13,19 @@
         <i class="fa-solid fa-video"></i>
         {{-- <i class="fa-solid fa-film"></i> --}}
         <img src="{{asset('media/cropped-android-chrome-512x512-1.png')}}" alt="">
-        <a href="/home/{id}/edit"><x-editar /></a>
-                <a href="/cursos"><x-ver /></a>
-                <x-eliminar />
+                <a href="/home/{{ $competencia->id }}/edit">
+                    <x-editar :competencia="$competencia" />
+                </a>
+                <a href="/courses/{{ $competencia->id }}">
+                    <x-ver :competencia="$competencia" />
+                </a>
+                <form action="/home/{{ $competencia->id }}" method="POST">
+                    @csrf
+                    @method("DELETE")
+                    <button type="submit">
+                        <x-eliminar :competencia="$competencia" />
+                </form>
+            </div>
         </div>
     </div>
 @endforeach
