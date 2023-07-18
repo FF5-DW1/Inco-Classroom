@@ -3,8 +3,8 @@
 
 <div class='loginContainer'>
           <form action="/login" method="POST">
-            <h1>Log In</h1>
           @csrf
+          <h1>Log In</h1>
             <div> 
               <label for="email"><p>Email</p> 
                 <input type="email" name="email" id="email">

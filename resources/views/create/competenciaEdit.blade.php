@@ -6,9 +6,7 @@
 <form method="POST" action="/home/{{ $competencia->id }}" class="competenciaForm">
     @csrf
     @method('PUT')
-<<<<<<< HEAD
     <h2>Editar competencia</h2>
->>>>>>> buttonsBack
     <div>
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" value="{{ $competencia->title }}" required>
