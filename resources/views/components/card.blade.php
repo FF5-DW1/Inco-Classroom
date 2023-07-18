@@ -9,24 +9,23 @@
                 <h4>{{ $competencia["title"] }}</h4>
             </div>
             <div class="iconos">
-                    {{-- <i class="fa-solid fa-circle-notch" style="font-size: 30px"></i>
-                <span>60%</span> --}}
-                <i class="fa-solid fa-person-chalkboard"></i>
-        <i class="fa-solid fa-video"></i>
-        {{-- <i class="fa-solid fa-film"></i> --}}
-        <img src="{{asset('media/cropped-android-chrome-512x512-1.png')}}" alt="">
-                <a href="/home/{{ $competencia->id }}/edit">
-                    <x-editar :competencia="$competencia" />
-                </a>
-                <a href="/courses/{{ $competencia->id }}">
-                    <x-ver :competencia="$competencia" />
-                </a>
-                <form action="/home/{{ $competencia->id }}" method="POST">
-                    @csrf
-                    @method("DELETE")
-                    <button type="submit">
-                        <x-eliminar :competencia="$competencia" />
-                </form>
+                <div>
+                    <i class="fa-solid fa-circle-notch" style="font-size: 30px"></i>
+                    <span style="font-size: 1rem; font-weight: bold;">60%</span>
+                </div>
+                <div>
+                    <a href="/home/{{ $competencia->id }}/edit">
+                        <x-editar :competencia="$competencia" />
+                    </a>
+                    <a href="/courses/{{ $competencia->id }}">
+                        <x-ver :competencia="$competencia" />
+                    </a>
+                    <form action="/home/{{ $competencia->id }}" method="POST">
+                        @csrf
+                        @method("DELETE")
+                            <x-eliminar :competencia="$competencia" />
+                    </form>
+                </div>
             </div>
         </div>
     </div>

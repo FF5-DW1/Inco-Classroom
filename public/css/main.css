@@ -100,6 +100,7 @@ button:hover {
 
 .iconos img {
   height: 1em;
+  aspect-ratio: 1;
 }
 
 .paddingContainer {
@@ -119,6 +120,14 @@ button:hover {
 .fa-trash-can {
   color: red;
   cursor: pointer;
+}
+
+.eliminar {
+  border: none;
+  background: none;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
 }
 
 /* HEADER */
@@ -287,7 +296,7 @@ button:hover {
     border: 1px solid lightgray;
   }
 
-  .card img {
+  .card > a img {
     width: 100%;
   }
 
