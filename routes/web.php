@@ -72,10 +72,12 @@ Route::get('/home/{id}/edit', [CompetenciaController::class, 'edit'])->name('hom
 Route::put('/home/{id}', [CompetenciaController::class, 'update']);
 //delete 
 Route::delete('/home/{id}', [CompetenciaController::class, 'destroy']);
+//show
+Route::get('/home/{slug}', [CompetenciaController::class, 'show'])->name('competencia.show');
 
 //Actions with courses
-//show
-Route::get('/home/{id}', [CourseController::class, 'courses'])->name('courses.show');
+// //show
+// Route::get('/home/{id}', [CourseController::class, 'courses'])->name('courses.show');
 //create
 Route::get('/cursos/create', [CourseController::class, 'create'])->name('cursos.create');
 Route::post('/cursos', [CourseController::class, 'store']);

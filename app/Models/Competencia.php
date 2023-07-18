@@ -11,6 +11,7 @@ class Competencia extends Model
 
     protected $fillable = [
         'title',
+        'slug', 
         'description',
         'image_url',
     ];

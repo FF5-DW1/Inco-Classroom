@@ -11,6 +11,7 @@
                 <p>{{ $curso["description"] }}</p>
             </div>
             <a href="/cursos/1"><x-ver /></a>
+            
         </div>
     </div>
     <div class="descripcion">
