@@ -16,7 +16,8 @@
               </label>
             </div>
             <br /> 
-              <input type="submit" value="Login">
+              {{-- <input type="submit" value="Login"> --}}
+              <x-loginbutton />
           </form>
       <img src="{{asset ('media/illust-login.avif')}}" alt='login' />
     </div>

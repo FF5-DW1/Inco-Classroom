@@ -1,6 +1,8 @@
 @foreach ($competencias as $competencia)
     <div class="card">
-        <img src="{{ asset('media/certificado-google.png') }}" alt="curso" />
+        <a href="/cursos">
+            <img src="{{ asset('media/certificado-google.png') }}" alt="curso" />
+        </a>
         <div>
             <div>
                 <p>Curso</p>

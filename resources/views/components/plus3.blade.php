@@ -1,8 +1,6 @@
 <div class="leccion card2">
     <div class="plus">
-        <div>
-            <i class="fa-solid fa-plus"></i>
-          </div>
+      <x-plus-icon />
     </div>
     <div class="descripcion">
         <div>

@@ -103,7 +103,7 @@ button:hover {
 }
 
 .paddingContainer {
-  padding: 3em 4em;
+  padding: 3em 6em;
   background-color: var(--color-fondo);
 }
 
@@ -266,7 +266,7 @@ button:hover {
   }
 
   .compContainer {
-    padding: 2em 4em;
+    padding: 2em 6em;
     background-color: var(--color-fondo);
   }
 
@@ -277,7 +277,7 @@ button:hover {
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1em;
+    gap: 2em;
     padding: 1em 0;
   }
 
@@ -287,7 +287,7 @@ button:hover {
     border: 1px solid lightgray;
   }
 
-  .card > img {
+  .card img {
     width: 100%;
   }
 
@@ -412,23 +412,39 @@ button:hover {
 
   /* NOSOTROS */
 
+  .equipo img {
+    width: 100%;
+  }
+
+  .sobre-inco {
+    margin-top: 4em;
+  }
+
   .enlaces {
     display: flex;
     justify-content: space-between;
     margin-bottom: 2em;
+    gap: 3em;
   }
 
-  .enlaces li {
-    margin-left: 1em;
-  }
-
-  .enlaces a:last-of-type {
-    text-align: right;
-    width: 25%;
+  .enlaces > div {
+    width:50%;
   }
 
   .enlaces img {
     width: 100%;
+  }
+
+  /* FAQ */
+
+  .faq {
+    border-bottom: 1px solid lightgray;
+  }
+
+  .faq > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   /* NUEVA COMPETENCIA / CURSO */
@@ -440,7 +456,7 @@ button:hover {
     padding: 2em;
   }
 
-  .plus > div {
+  .plus > a {
     border-radius: 50%;
     background-color: lightgray;
     width: 180px;
@@ -449,6 +465,11 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    text-decoration: none;
+    color: black;
   }
 
   .plus .fa-plus {
