@@ -5,7 +5,6 @@
 @section ('content')
 <form method="post" action="{{ route('home') }}" class="competenciaForm">
     @csrf
-    @method('PUT')
     <h2>Crear competencia nueva</h2>
     <div>
         <label for="title">Title:</label>
