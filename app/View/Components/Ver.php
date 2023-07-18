@@ -8,12 +8,14 @@ use Illuminate\View\Component;
 
 class Ver extends Component
 {
+    public $competencia;
+
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($competencia)
     {
-        //
+        $this->competencia = $competencia;
     }
 
     /**

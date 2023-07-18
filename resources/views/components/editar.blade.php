@@ -1,1 +1,1 @@
-<button class='botonBlanco ver'>EDITAR</button>
+<button class="botonBlanco ver">EDIT</button>
