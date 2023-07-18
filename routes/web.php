@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CompetenciaController; 
+use App\Http\Controllers\CourseController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -63,16 +64,24 @@ Route::get('/cursos', function () {
 })->name('cursos');
 
 //Actions with competencias
+//create
 Route::get('/home/create', [CompetenciaController::class, 'create'])->name('home.create');
 Route::post('/home', [CompetenciaController::class, 'store']);
+//edit
 Route::get('/home/{id}/edit', [CompetenciaController::class, 'edit'])->name('home.edit');
-Route::post('/home/{id}', [CompetenciaController::class, 'update']);
+Route::put('/home/{id}', [CompetenciaController::class, 'update']);
+//delete 
+Route::delete('/home/{id}', [CompetenciaController::class, 'destroy']);
 
 //Actions with courses
-Route::get('/cursos/create', [CursoController::class, 'create'])->name('cursos.create');
-Route::post('/cursos', [CursoController::class, 'store']);
-Route::get('/cursos/{id}/edit', [CursoController::class, 'edit'])->name('cursos.edit');
-Route::post('/cursos/{id}', [CursoController::class, 'update']);
+//show
+Route::get('/home/{id}', [CourseController::class, 'courses'])->name('courses.show');
+//create
+Route::get('/cursos/create', [CourseController::class, 'create'])->name('cursos.create');
+Route::post('/cursos', [CourseController::class, 'store']);
+//edit
+Route::get('/cursos/{id}/edit', [CourseController::class, 'edit'])->name('cursos.edit');
+Route::put('/cursos/{id}', [CourseController::class, 'update']);
 
 // Contenido del curso
 Route::get('/cursos/{id}', function () {

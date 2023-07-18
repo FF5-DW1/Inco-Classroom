@@ -7,40 +7,89 @@ use Illuminate\Http\Request;
 
 class CompetenciaController extends Controller
 {
-    public function create() { 
-        return view('create.competenciaNew'); 
+    public function index()
+    {
+        $competencias = Competencia::all();
+        // $competencias = [
+        //     [
+        //         "id" => "1",
+        //         "title" => "BlaBlablawooow",
+        //     ],
+        // ]; 
+        return view('home', [
+            "competencias" => $competencias,
+        ]); 
+        // return view('index', compact('competencias'));
     }
 
-    public function store(Request $request) { 
-        //validate data
-        $validated = $request ->validate([
+
+    public function create()
+    {
+        return view('create.competenciaNew');
+    }
+
+    public function store(Request $request)
+    {
+        // validate data
+        $validated = $request->validate([
             'title' => 'required',
             'description' => 'nullable',
             'image_url' => 'nullable|url',
-        ]); 
-        // dd ($validated); 
-        //save the data
-        Competencia::create($validated); 
-        //return view in case of success
+        ]);
+
+        // Save the data
+        Competencia::create($validated);
+
+        // Return view in case of success
         return redirect("/home");
     }
 
-    public function edit() { 
-        //read the project from the db
-        return view('create.competenciaEdit'); 
+    public function edit($id)
+    {
+        // Find the specific Competencia by its ID
+        $competencia = Competencia::findOrFail($id);
+    
+        // Pass the $competencia variable to the view
+        return view('create.competenciaEdit', compact('competencia'));
     }
+    
 
-    public function update(Request $request) { 
-        //validate data
-        $validated = $request ->validate([
+    public function update(Request $request, $id)
+    {
+        // Validate data
+        $validated = $request->validate([
             'title' => 'required',
-            'description' => 'required',
+            'description' => 'nullable',
             'image_url' => 'nullable|url',
-        ]); 
-        // dd ($validated); 
-        //save the data
+        ]);
 
-        //return view in case of success
-        return redirect("/home");
-    }
+        // Find the specific Competencia by ID
+        $competencia = Competencia::findOrFail($id);
+
+            // Update the data
+            $competencia->update($validated);
+
+            // Return view in case of success
+            return redirect("/home");
+        }
+
+        public function show($id)
+        {
+            // Find the specific Competencia by its ID
+            $competencia = Competencia::findOrFail($id);
+        
+            return view('courses', [
+                "competencia" => $competencia, 
+            ]);
+        }
+
+        public function destroy($id)
+        {
+            // Find the specific Competencia by its ID
+            $competencia = Competencia::findOrFail($id);
+            $competencia->delete(); 
+        
+            return redirect('/home')->with("competencias", $competencia);
+        }
+        
 }

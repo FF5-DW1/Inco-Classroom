@@ -8,12 +8,13 @@ use Illuminate\View\Component;
 
 class Editar extends Component
 {
+    public $competencia;
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($competencia)
     {
-        //
+        $this->competencia = $competencia;
     }
 
     /**
