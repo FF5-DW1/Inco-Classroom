@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Competencia;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CompetenciaController extends Controller
 {
@@ -30,6 +31,15 @@ class CompetenciaController extends Controller
 
     public function store(Request $request)
     {
+        $slug = Str::slug($request->title, '-'); 
+
+        $exists = Competencia::where('slug', $slug)->first(); 
+
+        if($exists){
+            return redirect()->route('home')->withErrors(['title' => 'Ese titulo ya existe']); 
+        }
+        // dd($slug); 
+
         // validate data
         $validated = $request->validate([
             'title' => 'required',
@@ -38,7 +48,12 @@ class CompetenciaController extends Controller
         ]);
 
         // Save the data
-        Competencia::create($validated);
+        // Competencia::create($validated);
+        $competencia = Competencia::create([
+            'title' => $request ->title, 
+            'slug' => $slug, 
+            'description' => $request ->description, 
+        ]); 
 
         // Return view in case of success
         return redirect("/home");
@@ -73,15 +88,15 @@ class CompetenciaController extends Controller
             return redirect("/home");
         }
 
-        public function show($id)
-        {
-            // Find the specific Competencia by its ID
-            $competencia = Competencia::findOrFail($id);
+        // public function show($id)
+        // {
+        //     // Find the specific Competencia by its ID
+        //     $competencia = Competencia::findOrFail($id);
         
-            return view('courses', [
-                "competencia" => $competencia, 
-            ]);
-        }
+        //     return view('courses', [
+        //         "competencia" => $competencia, 
+        //     ]);
+        // }
 
         public function destroy($id)
         {
@@ -90,6 +105,20 @@ class CompetenciaController extends Controller
             $competencia->delete(); 
         
             return redirect('/home')->with("competencias", $competencia);
+        }
+
+        public function show(Request $request, $slug) {
+            $competencia = Competencia::where('slug', $slug)->first();
+        
+            if (!$competencia) {
+                return abort(404);
+            }
+
+            // dd($competencia); 
+        
+            return view('courses', [
+                "competencia" => $competencia,
+            ]);
         }
         
 }

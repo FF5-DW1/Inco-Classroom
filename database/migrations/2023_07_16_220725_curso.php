@@ -9,15 +9,15 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up():void
     {
         Schema::create('cursos', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table ->string('slug'); 
             $table->text('description');
             $table->integer('duration');
-            $table->unsignedBigInteger('id_competencia');
-            $table->foreign('title_competencia')->references('title')->on('competencias')->onDelete('cascade');
+            $table->foreign('id_competencia')->references('id')->on('competencias')->onDelete('cascade');
             $table->string('cursera_url')->nullable();
             $table->string('presentaciones_url')->nullable();
             $table->string('grabaciones_url')->nullable();

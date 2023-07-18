@@ -10,7 +10,6 @@
     <div>
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" required>
-        {{-- value="{{ old('title', $competencia["title"]) }}" --}}
         @error('title')
         <div class="form-error">{{ $message }}</div>
         @enderror
