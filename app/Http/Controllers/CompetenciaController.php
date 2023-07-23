@@ -4,25 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Models\Competencia;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+
+
 
 class CompetenciaController extends Controller
 {
+    use Notifiable;
+
     public function index()
     {
-        $competencias = Competencia::all();
-        // $competencias = [
-        //     [
-        //         "id" => "1",
-        //         "title" => "BlaBlablawow",
-        //     ],
-        // ]; 
-        return view('home', [
-            "competencias" => $competencias,
-        ]); 
-        // return view('index', compact('competencias'));
+        $user = Auth::user();
+    
+        // Retrieve competencias for the logged-in user
+        $competencias = $user->competencias;
+    
+        // If the user is a teacher, you can also retrieve other competencias
+        $otherCompetencias = $user->isTeacher() ? Competencia::all() : [];
+    
+        return view('home', compact('competencias', 'otherCompetencias'));
     }
-
 
     public function create()
     {

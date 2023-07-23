@@ -22,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'teacher',
     ];
 
     /**
@@ -49,7 +50,7 @@ class User extends Authenticatable
         return $this->teacher;
     }
 
-    public function competencia()
+    public function competencias()
     {
         return $this->isTeacher()
             ? $this->hasMany(Competencia::class)

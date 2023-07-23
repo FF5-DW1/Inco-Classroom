@@ -14,7 +14,7 @@ class CompetenciaSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(int $competenciaCount = 3): void
+    public function run(): void
     {
         DB::table('competencias')->delete();
         DB::table('cursos')->delete();
@@ -22,25 +22,20 @@ class CompetenciaSeeder extends Seeder
         $teachers = User::where('teacher', true)->get();
         $students = User::where('teacher', false)->get();
 
-        $competenciaCount = 3;
-
-        $teachers->each(function ($teacher) use ($students, $competenciaCount) {
-            $competencias = Competencia::factory()->count($competenciaCount)->create([
+        $teachers->each(function ($teacher) use ($students) {
+            $competencias = Competencia::factory()->count(2)->create([
                 'user_id' => $teacher->id,
             ]);
 
-            $shuffledStudents = $students->shuffle();
-
-            $competencias->each(function ($competencia) use ($shuffledStudents) {
-                $selectedStudents = $shuffledStudents->random(rand(5, 15));
-                $selectedStudents->each(function ($student) use ($competencia) {
-                    $competencia->students()->attach($student);
-                });
+            $competencias->each(function ($competencia) use ($students) {
+                $competencia->students()->attach(
+                    $students->random(rand(4, 15))->pluck('id')->toArray()
+                );
 
                 $cursos = Curso::factory()->count(3)->create([
                     'competencia_id' => $competencia->id,
                 ]);
             });
-        }); 
+        });
     }
 }

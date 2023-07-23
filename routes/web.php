@@ -43,11 +43,6 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
-// // Ruta de registro
-// Route::get('/register', function () {
-//     return view('register');
-// })->name('register');
-
 // Nosotros
 Route::get('/nosotros', function () {
     return view('nosotros');
