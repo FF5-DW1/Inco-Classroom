@@ -12,10 +12,6 @@
         <input type="text" id="title" name="title" value="{{ $competencia->title }}" required>
     </div>
     <div>
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" required>{{ $competencia->description }}</textarea>
-    </div>
-    <div>
         <label for="image_url">Image URL:</label>
         <input type="text" id="image_url" name="image_url" placeholder="Enter image URL" value="{{ $competencia->image_url }}">
     </div>

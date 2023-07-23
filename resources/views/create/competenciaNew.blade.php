@@ -15,13 +15,6 @@
         @enderror
     </div>
     <div>
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" required></textarea>
-        @error('description')
-        <div class="form-error">{{ $message }}</div>
-        @enderror
-    </div>
-    <div>
         <label for="image_url">Image URL:</label>
         <input type="text" id="image_url" name="image_url" placeholder="Enter image URL">
         @error('image_url')

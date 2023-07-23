@@ -43,7 +43,6 @@ class CompetenciaController extends Controller
         // validate data
         $validated = $request->validate([
             'title' => 'required',
-            'description' => 'nullable',
             'image_url' => 'nullable|url',
         ]);
 

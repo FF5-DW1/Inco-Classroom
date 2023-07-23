@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->delete();
 
-        User::factory()->teacher()->count(4)->create();
+        User::factory()->teacher()->count(5)->create();
         User::factory()->student()->count(20)->create();
     }
 }
