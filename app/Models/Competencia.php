@@ -15,4 +15,21 @@ class Competencia extends Model
         'description',
         'image_url',
     ];
+
+    public function courses()
+    {
+        return $this->hasMany(Curso::class);
+    }
+    public function teachers()
+    {
+        return $this->belongsToMany(User::class);
+    }
+    public function students()
+    {
+        return $this->belongsToMany(User::class);
+    }
+    public function studentCount()
+    {
+        return $this->students()->count();
+    }
 }

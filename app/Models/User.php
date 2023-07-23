@@ -43,4 +43,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function isTeacher()
+    {
+        return $this->teacher;
+    }
+
+    public function competencia()
+    {
+        return $this->isTeacher()
+            ? $this->hasMany(Competencia::class)
+            : $this->belongsToMany(Competencia::class);
+    }
 }

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CompetenciaController; 
-use App\Http\Controllers\CourseController; 
+use App\Http\Controllers\CursoController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -77,16 +77,16 @@ Route::get('/home/{slug}', [CompetenciaController::class, 'show'])->name('compet
 
 //Actions with courses
 // //show
-// Route::get('/home/{id}', [CourseController::class, 'courses'])->name('courses.show');
+// Route::get('/home/{id}', [CursoController::class, 'courses'])->name('courses.show');
 //create
-Route::get('/cursos/create', [CourseController::class, 'create'])->name('cursos.create');
-Route::post('/cursos', [CourseController::class, 'store']);
+Route::get('/cursos/create', [CursoController::class, 'create'])->name('cursos.create');
+Route::post('/cursos', [CursoController::class, 'store']);
 //edit
-Route::get('/cursos/{id}/edit', [CourseController::class, 'edit'])->name('cursos.edit');
-Route::put('/cursos/{id}', [CourseController::class, 'update']);
+Route::get('/cursos/{id}/edit', [CursoController::class, 'edit'])->name('cursos.edit');
+Route::put('/cursos/{id}', [CursoController::class, 'update']);
 
 // Contenido del curso
-Route::get('/cursos/{id}', function () {
+Route::get('/cursos/{id}', function () { 
     return view('course');
 })->name('modulos');
 

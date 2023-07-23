@@ -18,4 +18,25 @@ class Curso extends Model
         'grabaciones_url',
 
     ]; 
+
+    public function competencia()
+    {
+        return $this->belongsTo(Competencia::class);
+    }
+    public function modulos()
+    {
+        return $this->hasMany(Modulo::class);
+    }
+    // public function teacher()
+    // {
+    //     return $this->belongsTo(User::class);
+    // }
+    // public function students()
+    // {
+    //     return $this->belongsToMany(User::class);
+    // }
+    // public function studentCount()
+    // {
+    //     return $this->students()->count();
+    // }
 }

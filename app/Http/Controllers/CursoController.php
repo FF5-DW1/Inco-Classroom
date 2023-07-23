@@ -6,7 +6,7 @@ use App\Models\Competencia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 
-class CourseController extends Controller
+class CursoController extends Controller
 {
     // public function show(Request $request, $id) {
 
@@ -25,3 +25,4 @@ class CourseController extends Controller
     // //     return view('courses', compact('competencia'));
     // // }
 }
+

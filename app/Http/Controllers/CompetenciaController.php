@@ -14,7 +14,7 @@ class CompetenciaController extends Controller
         // $competencias = [
         //     [
         //         "id" => "1",
-        //         "title" => "BlaBlablawooow",
+        //         "title" => "BlaBlablawow",
         //     ],
         // ]; 
         return view('home', [
