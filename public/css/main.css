@@ -12,8 +12,7 @@
 :root {
   --color-base: #012061;
 --color-fondo: #F1F7FB;
-/* --color2: #1F5293;
---color3: #1A45A3; */
+--color2: rgb(67,153,217);
 }
 
 body {
@@ -450,6 +449,11 @@ button:hover {
 
   .faq {
     border-bottom: 1px solid lightgray;
+  }
+
+  .nuevofaq {
+    display: flex;
+    justify-content: center;
   }
 
   .faq > div {
