@@ -359,7 +359,7 @@ button:hover {
     align-items: center;
   }
 
-   .recursos i, .recursos img {
+   .recursos .fa-person-chalkboard, .recursos .fa-video, .recursos img {
     height: 5rem;
     font-size: 5em;
     color: var(--color-base);
@@ -467,12 +467,11 @@ button:hover {
     padding: 2em;
   }
 
-  .plus > a {
+  .plus-icon {
     border-radius: 50%;
     background-color: lightgray;
-    width: 180px;
-    height: 180px;
-    padding: 10px;
+    width: 24px;
+    height: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -481,6 +480,14 @@ button:hover {
     justify-self: center;
     text-decoration: none;
     color: black;
+    margin-top: 1em;
+  }
+
+  .plus .plus-icon {
+    width: 180px;
+    height: 180px;
+    padding: 10px;
+    margin-top: 0;
   }
 
   .plus .fa-plus {

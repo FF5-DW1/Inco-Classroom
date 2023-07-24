@@ -88,6 +88,16 @@ Route::get('/admin-panel/courses', function () {
     return view('admin-courses');
 })->name('admin-courses');
 
+// Nueva competencia
+Route::get('/admin/nueva-competencia', function () {
+    return view('nueva-competencia');
+})->name('nueva-competencia');
+
+// Nuevo curso
+Route::get('/admin/nuevo-curso', function () {
+    return view('nuevo-curso');
+})->name('nuevo-curso');
+
 //Actions with competencias
 //create
 Route::get('/home/create', [CompetenciaController::class, 'create'])->name('home.create');

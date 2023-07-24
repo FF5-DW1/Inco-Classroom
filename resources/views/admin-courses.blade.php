@@ -4,10 +4,12 @@
 <div class="paddingContainer">
     <a href="/admin-panel"><< Panel de administrador</a>
     <div class="grid2">
-        <div class="adminCard">
-            <i class="fa-solid fa-medal"></i>
-            <h3>Cursos</h3>
-        </div>
+        <a href="/admin/nuevo-curso">
+            <div class="adminCard">
+                <i class="fa-solid fa-medal"></i>
+                <h3>Cursos</h3>
+            </div>
+        </a>
     </div>
 </div>
 
