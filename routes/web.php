@@ -63,6 +63,31 @@ Route::get('/cursos', function () {
     return view('courses');
 })->name('cursos');
 
+// Página recursos
+Route::get('/recursos', function () {
+    return view('recursos');
+})->name('recursos');
+
+// Admin panel
+Route::get('/admin-panel', function () {
+    return view('admin-panel');
+})->name('admin-panel');
+
+// Vista de usuarios
+Route::get('/admin-panel/users', function () {
+    return view('admin-users');
+})->name('admin-users');
+
+// Vista de competencias
+Route::get('/admin-panel/competencies', function () {
+    return view('admin-competencies');
+})->name('admin-competencies');
+
+// Vista de cursos
+Route::get('/admin-panel/courses', function () {
+    return view('admin-courses');
+})->name('admin-courses');
+
 //Actions with competencias
 //create
 Route::get('/home/create', [CompetenciaController::class, 'create'])->name('home.create');
