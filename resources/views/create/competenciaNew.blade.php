@@ -25,7 +25,7 @@
         <label for="image_url">Image URL:</label>
         <input type="text" id="image_url" name="image_url" placeholder="Enter image URL">
         @error('image_url')
-        <div class="form-error">{{ $message }}</div>
+        <div class style="color:red;" ="form-error">{{ $message }}</div>
         @enderror
     </div>
     <button type="submit">Crear</button>
