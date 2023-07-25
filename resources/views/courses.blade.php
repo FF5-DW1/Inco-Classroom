@@ -3,7 +3,7 @@
 
 <div class="paddingContainer">
     <a href="/home"><< Mis competencias</a>
-    <h1>{{ $competencia->title }} <i class="fa-solid fa-chevron-down plegableCursos"></i></h1>
+    <h1>{{ $competencia["title"] }} <i class="fa-solid fa-chevron-down plegableCursos"></i></h1>
     <div class="contents">
         <x-curso :cursos="$competencia->courses" :competencia="$competencia"/>
         <x-plus2 />

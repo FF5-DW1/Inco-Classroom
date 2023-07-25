@@ -107,13 +107,16 @@ Route::delete('/home/{id}', [CompetenciaController::class, 'destroy']);
 Route::get('/home/{slug}', [CompetenciaController::class, 'show'])->name('competencia.show');
 
 //Actions with courses
-
 // create
-Route::get('/cursos/create', [CursoController::class, 'create'])->name('cursos.create');
+Route::get('/cursos/create', [CursoController::class, 'create'])->name('curso.create');
 Route::post('/cursos', [CursoController::class, 'store']);
 //edit
-Route::get('/cursos/{id}/edit', [CursoController::class, 'edit'])->name('cursos.edit');
-Route::put('/cursos/{id}', [CursoController::class, 'update']);
+Route::get('/cursos/{id}/edit', [CursoController::class, 'edit'])->name('curso.edit');
+Route::put('/cursos/{slug}', [CursoController::class, 'update']);
+//delete 
+Route::delete('/cursos/{id}', [CursoController::class, 'destroy']);
+//show
+Route::get('/cursos/{slug}', [CursoController::class, 'show'])->name('curso.show');
 
 // Contenido del curso
 Route::get('/cursos/{id}', function () { 

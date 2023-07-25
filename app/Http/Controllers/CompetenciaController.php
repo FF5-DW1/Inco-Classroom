@@ -109,17 +109,18 @@ class CompetenciaController extends Controller
             return redirect('/home')->with("competencias", $competencia);
         }
 
-        public function show(Request $request, $slug) {
-            $competencia = Competencia::where('slug', $slug)->first();
-
-            if (!$competencia) {
+        public function show(Request $request, $slug)
+        {
+            $curso = Competencia::where('slug', $slug)->first();
+        
+            if (!$curso) {
                 return abort(404);
             }
-
-             // dd($competencia->courses->toArray()); 
+        
+            // dd($curso); // Debugging output
         
             return view('courses', [
-                "competencia" => $competencia,
+                "curso" => $curso,
             ]);
         }
         
