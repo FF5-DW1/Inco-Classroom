@@ -116,7 +116,7 @@ class CompetenciaController extends Controller
                 return abort(404);
             }
 
-            // dd($competencia); 
+             // dd($competencia->courses->toArray()); 
         
             return view('courses', [
                 "competencia" => $competencia,

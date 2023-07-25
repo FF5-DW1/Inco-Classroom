@@ -1,4 +1,5 @@
 /.phpunit.cache
+.diagrama-db
 /db
 /node_modules
 /public/build

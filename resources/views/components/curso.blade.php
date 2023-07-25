@@ -21,9 +21,9 @@
             </a>
           </div>
           <div>
-            <!-- <x-editar /> -->
+          <x-editar :curso="$curso" />
           <a href="/cursos/1"><x-ver /></a>
-          <x-eliminar />
+          <x-eliminar :curso="$curso" />
           </div>
         </div>
     </div>
