@@ -709,5 +709,16 @@ button:hover {
     width: 100%;
     height: auto;
   }
+
+  /* Ajustar el ancho de las columnas en el footer para la vista móvil */
+.footer {
+  grid-template-columns: 1fr;
 }
+
+/* Ajustar el tamaño del logo en el footer para la vista móvil */
+.footer .logo {
+  width: 8em;
+  margin: 0 auto;
+}
+Con estas modificaciones, el footer debería verse mejor en dispositivos móviles, con las colum
 }
