@@ -7,10 +7,9 @@
     <section class='competencias'>
       <h2>Mis competencias</h2>
       <div class='grid'>
-        @if (!empty($competencias))
-          @foreach ($competencias as $competencia)
-          <x-card :competencias="$competencias" />
-          @endforeach
+        @if (!empty($user->competencias))
+          <x-card :competencias="$user->competencias" />
+          
         @else
           <p>No competencias found.</p>
         @endif

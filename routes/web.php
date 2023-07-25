@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CompetenciaController; 
-use App\Http\Controllers\CursoController; 
+use App\Http\Controllers\CursoController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,7 @@ Route::group(['middleware' => ['guest']], function () {
 });
 
 // Ruta de inicio después del login
-Route::get('/home', [LoginController::class, 'home'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // Rutas de autenticación
 Route::get('/login', [LoginController::class, 'login'])->name('login');
@@ -71,9 +72,8 @@ Route::delete('/home/{id}', [CompetenciaController::class, 'destroy']);
 Route::get('/home/{slug}', [CompetenciaController::class, 'show'])->name('competencia.show');
 
 //Actions with courses
-// //show
-// Route::get('/home/{id}', [CursoController::class, 'courses'])->name('courses.show');
-//create
+
+// create
 Route::get('/cursos/create', [CursoController::class, 'create'])->name('cursos.create');
 Route::post('/cursos', [CursoController::class, 'store']);
 //edit

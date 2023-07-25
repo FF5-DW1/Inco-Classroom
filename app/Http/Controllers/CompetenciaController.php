@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use App\Models\User;
 
 
 
@@ -20,7 +21,7 @@ class CompetenciaController extends Controller
     
         // Retrieve competencias for the logged-in user
         $competencias = $user->competencias;
-    
+
         // If the user is a teacher, you can also retrieve other competencias
         $otherCompetencias = $user->isTeacher() ? Competencia::all() : [];
     
@@ -54,7 +55,6 @@ class CompetenciaController extends Controller
         $competencia = Competencia::create([
             'title' => $request ->title, 
             'slug' => $slug, 
-            'description' => $request ->description, 
         ]); 
 
         // Return view in case of success
@@ -111,7 +111,7 @@ class CompetenciaController extends Controller
 
         public function show(Request $request, $slug) {
             $competencia = Competencia::where('slug', $slug)->first();
-        
+
             if (!$competencia) {
                 return abort(404);
             }

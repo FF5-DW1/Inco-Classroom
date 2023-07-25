@@ -21,7 +21,7 @@
             </a>
           </div>
           <div>
-            <x-editar />
+            <!-- <x-editar /> -->
           <a href="/cursos/1"><x-ver /></a>
           <x-eliminar />
           </div>
