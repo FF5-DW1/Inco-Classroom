@@ -4,13 +4,7 @@
 <div class="nosotros paddingContainer">
     <div class="equipo">
         <h2>El equipo</h2>
-        {{-- <img src="{{asset('media/equipo.png')}}" alt="equipo"> --}}
         <div class="personas">
-            {{-- <div class="personas">
-                <img src="{{asset('media/Ángel.jpg')}}" alt="">
-                <img src="{{asset('media/Ana.jpg')}}" alt="">
-                <img src="{{asset('media/Teresa.jpg')}}" alt="">
-            </div> --}}
             <div class="datos">
                 <div>
                     <img src="{{asset('media/Ángel.jpg')}}" alt="">
@@ -43,10 +37,6 @@
                     </div>                    
                 </div>  
             </div>
-            {{-- <div class="personas">
-                <img src="{{asset('media/Marina.jpg')}}" alt="">
-                <img src="{{asset('media/Patricia.jpg')}}" alt="">
-            </div> --}}
             <div class="datos">
                 <div>
                     <img src="{{asset('media/Marina.jpg')}}" alt="">
@@ -88,7 +78,6 @@
                 <h3>INCO Academy Spain</h3>
                 <a href="http://incoacademy.es/">http://incoacademy.es/</a>
             </div>
-
         </div>  
     </div>
 </div>

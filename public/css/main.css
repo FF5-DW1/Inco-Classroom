@@ -130,11 +130,12 @@ button:hover {
 
 .headerContainer{
     width: 100vw;
-    height: 2.5em;
+    height: 2em;
     background-color: var(--color-base);
     position: fixed;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1.5em;
     z-index: 2;
     top: 0;
@@ -189,7 +190,6 @@ button:hover {
 /* FOOTER */
 
 .footer {
-    /* width: 100vw; */
     background-color: var(--color-base);
     padding: 1em 5em;
     color: white;
@@ -199,6 +199,7 @@ button:hover {
     gap: 4em;
     justify-content: space-between;
     margin-top: -8px;
+    position: relative;
   }
 
   .footer a {
@@ -305,7 +306,6 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* height: 100%; */
   }
 
   /* PÁGINA DE CURSOS */
