@@ -625,3 +625,89 @@ button:hover {
     color: black;
     text-decoration: none;
   }
+
+  /* Estilos generales que aplican a todos los dispositivos */
+
+/* Tablet (2 tarjetas) */
+@media screen and (max-width: 1024px) {
+  /* Ajustar el ancho de las tarjetas */
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Eliminar el relleno superior */
+  .mainContainerContent {
+    margin-top: 2em;
+  }
+
+  /* Ajustar el ancho de los elementos del formulario */
+  .competenciaForm input[type="text"],
+  .competenciaForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--color-base);
+  }
+
+  /* Ajustar el ancho del botón de envío en el formulario */
+  .competenciaForm button[type="submit"] {
+    width: 100%;
+  }
+}
+
+/* Mobile (1 sola tarjeta) */
+@media screen and (max-width: 768px) {
+   /* Mostrar una sola tarjeta en cada fila del grid */
+   .grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ajustar el ancho de los elementos del formulario */
+  .competenciaForm input[type="text"],
+  .competenciaForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--color-base);
+  }
+
+  /* Ajustar el ancho del botón de envío en el formulario */
+  .competenciaForm button[type="submit"] {
+    width: 100%;
+  }
+
+  /* Ajustar el ancho del logo en el header */
+  .headerContainer .logo {
+    width: 4em;
+  }
+
+  /* Ajustar el tamaño del ícono del botón plus en la página de agregar competencia */
+  .plus .plus-icon {
+    width: 120px;
+    height: 120px;
+    padding: 6px;
+  }
+
+  /* Ajustar el tamaño del ícono plus en la página de agregar competencia */
+  .plus .fa-plus {
+    font-size: 40px;
+  }
+
+  /* Ajustar el tamaño de las imágenes en la página de recursos */
+  .recurso img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Ajustar el tamaño de las imágenes en la página de acceso rápido */
+  .accesoRapido img {
+    width: 80%;
+  }
+
+  /* Ajustar el tamaño de las imágenes en la página de cursos */
+  .curso > div img {
+    width: 100%;
+    height: auto;
+  }
+}
+}
