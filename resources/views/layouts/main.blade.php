@@ -52,7 +52,9 @@
             </div>
 
     </footer>
+    @auth
     <script src="{{asset('js/dom-layout.js')}}"></script>
+    @endauth
 </body>
 
 </html>

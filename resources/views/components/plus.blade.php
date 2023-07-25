@@ -1,8 +1,6 @@
 <div class="card">
     <div class="plus">
-        <div>
-            <i class="fa-solid fa-plus"></i>
-        </div>
+        <x-plus-icon />
     </div>
     <div>
         <div>

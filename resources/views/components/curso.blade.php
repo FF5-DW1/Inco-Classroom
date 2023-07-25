@@ -17,7 +17,7 @@
             <i class="fa-solid fa-video"></i>
             {{-- <i class="fa-solid fa-film"></i> --}}
             <a href="https://www.coursera.org/learn/asistencia-tecnica/home/week/1">
-                <img src="{{asset('media/cropped-android-chrome-512x512-1.png')}}" alt="">
+                <img src="{{asset('media/cropped-android-chrome-512x512-1.png')}}" alt="coursera">
             </a>
           </div>
           <div>

@@ -8,15 +8,15 @@ use Illuminate\View\Component;
 
 class Ver extends Component
 {
-    public $competencia;
+    // public $competencia;
 
-    /**
-     * Create a new component instance.
-     */
-    public function __construct($competencia)
-    {
-        $this->competencia = $competencia;
-    }
+    // /**
+    //  * Create a new component instance.
+    //  */
+    // public function __construct($competencia)
+    // {
+    //     $this->competencia = $competencia;
+    // }
 
     /**
      * Get the view / contents that represent the component.

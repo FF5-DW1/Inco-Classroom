@@ -2,35 +2,29 @@
 @section('content')
 
 <div class="paddingContainer">
-    <a href="/home"><< Mis competencias</a>
-    <h1>{{ $competencia->title }} <i class="fa-solid fa-chevron-down plegableCursos"></i></h1>
+    <a href="/admin-panel/competencies"><< Competencias</a>
+    <h1>Nueva competencia <i class="fa-solid fa-chevron-down plegableCursos"></i></h1>
     <div class="contents">
-        <x-curso />
         <x-plus2 />
     </div>
-    <h2>Progreso</h2>
-    <div class="progreso"></div>
     <h2>Acceso rápido</h2>
     <div class="accesoRapido">
         <div>
             <img src="{{ asset('media/zoom.png') }}" alt="zoom">
             <div>
-                <h4>Enlace Zoom</h4>
-            <p class="gris">Ver instrucciones</p>
+                <x-plus-icon/>
             </div>   
         </div>
         <div>
             <img src="{{ asset('media/slack.png') }}" alt="slack">
             <div>
-                <h4>Enlace Slack</h4>
-            <p class="gris">Ver instrucciones</p>
+                <x-plus-icon/>
             </div>  
         </div>
         <div>
             <img src="{{ asset('media/g-calendar.png') }}" alt="g-calendar">
             <div>
-                <h4>Enlace Google Calendar</h4>
-                <p class="gris">Ver instrucciones</p>   
+                <x-plus-icon/> 
             </div>
         </div>
     </div>
