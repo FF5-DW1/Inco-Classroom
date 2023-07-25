@@ -65,9 +65,12 @@ Route::get('/recursos', function () {
 })->name('recursos');
 
 // Admin panel
-Route::get('/admin-panel', function () {
+// Route::get('/admin-panel', function () {
+//     return view('admin-panel');
+// })->name('admin-panel');
+Route::get('/admin-panel', function () { 
     return view('admin-panel');
-})->name('admin-panel');
+})->middleware('auth', 'role:superadmin')->name('admin-panel');
 
 // Vista de usuarios
 Route::get('/admin-panel/users', function () {
@@ -104,7 +107,8 @@ Route::put('/home/{id}', [CompetenciaController::class, 'update']);
 //delete 
 Route::delete('/home/{id}', [CompetenciaController::class, 'destroy']);
 //show
-Route::get('/home/{slug}', [CompetenciaController::class, 'show'])->name('competencia.show');
+// Route::get('/home/{id}', [CompetenciaController::class, 'show'])->name('competencia.show');
+Route::get('{slug}', [CompetenciaController::class, 'show'])->name('competencia.show');
 
 //Actions with courses
 // create
@@ -115,18 +119,13 @@ Route::get('/cursos/{id}/edit', [CursoController::class, 'edit'])->name('curso.e
 Route::put('/cursos/{slug}', [CursoController::class, 'update']);
 //delete 
 Route::delete('/cursos/{id}', [CursoController::class, 'destroy']);
-//show
+//show modules of the curso
 Route::get('/cursos/{slug}', [CursoController::class, 'show'])->name('curso.show');
 
 // Contenido del curso
 Route::get('/cursos/{id}', function () { 
     return view('course');
 })->name('modulos');
-
-// Recursos para estudiar
-// Route::get('/curso/recursos', function () {
-//     return view('recursos');
-// })->name('recursos');
 
 
 // Ruta de verificación de correo electrónico

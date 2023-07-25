@@ -5,10 +5,28 @@ namespace App\Http\Controllers;
 use App\Models\Competencia;
 use App\Models\Curso;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Str;
 
 class CursoController extends Controller
 {
+
+    // public function index()
+    // {
+    //     // Get the logged-in user's competencia_id (assuming the relationship is defined in the User model)
+    //     $competenciaId = Auth::user()->competencia_id;
+        
+    //     // Retrieve cursos for the logged-in user's competence (competencia_id)
+    //     $cursos = Curso::where('competencia_id', $competenciaId)->get();
+
+    //     return view('courses', compact('cursos', 'competenciaId'));
+    //     // return view('courses', [
+    //     //     'cursos' => $cursos,
+    //     //     'competenciaId' => $competenciaId, // Pass the $competenciaId variable to the view
+    //     // ]);
+    // }
+
     public function create()
     {
         return view('create.cursoNew');
@@ -88,17 +106,33 @@ class CursoController extends Controller
             return redirect('/cursos')->with("success", "Curso deleted successfully.");
         }
     
-        public function show(Request $request, $slug)
+
+        public function show($slug, Curso $curso)
         {
-            $curso = Curso::where('slug', $slug)->first();
-    
-            if (!$curso) {
+            $modulo = Curso::where('slug', $slug)->first();
+        
+            if (!$modulo) {
                 return abort(404);
             }
-
+        
+            dd($modulo); // Debugging output
+        
             return view('curso.show', [
                 "curso" => $curso,
+                "modulo" => $modulo,
             ]);
         }
+        // public function show(Request $request, $slug)
+        // {
+        //     $curso = Curso::where('slug', $slug)->first();
+
+        //     if (!$curso) {
+        //         return abort(404);
+        //     }
+        //     {{ dd($curso) }};
+        //     return view('curso.show', [
+        //         "curso" => $curso,
+        //     ]);
+        // }
         
 }
