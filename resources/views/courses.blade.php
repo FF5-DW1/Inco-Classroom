@@ -16,21 +16,21 @@
             <img src="{{ asset('media/zoom.png') }}" alt="zoom">
             <div>
                 <h4>Enlace Zoom</h4>
-            <p class="gris">Ver instrucciones</p>
+            <p class="azul">Ver instrucciones</p>
             </div>   
         </div>
         <div>
             <img src="{{ asset('media/slack.png') }}" alt="slack">
             <div>
                 <h4>Enlace Slack</h4>
-            <p class="gris">Ver instrucciones</p>
+            <p class="azul">Ver instrucciones</p>
             </div>  
         </div>
         <div>
             <img src="{{ asset('media/g-calendar.png') }}" alt="g-calendar">
             <div>
                 <h4>Enlace Google Calendar</h4>
-                <p class="gris">Ver instrucciones</p>   
+                <p class="azul">Ver instrucciones</p>   
             </div>
         </div>
     </div>

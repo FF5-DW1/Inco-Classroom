@@ -4,7 +4,7 @@
     </div>
     <div class="descripcion">
         <div>
-            <p class="gris">Descripción</p>
+            <p class="azul">Descripción</p>
             <p>Descripción de nuevo módulo</p>
         </div>
       <x-crear />

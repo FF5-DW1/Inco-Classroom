@@ -40,10 +40,15 @@ input, textarea {
   border-radius: 1em;
   border: 1px solid var(--color-base);
   padding: .5em 1em;
+  color: var(--color2);
 }
 
 a {
-  color: #1A45A3;
+  color: var(--color2);
+}
+
+a:hover {
+  color: var(--color-base);
 }
 
 button {
@@ -73,8 +78,8 @@ button:hover {
   justify-self: flex-end;
 }
 
-.gris {
-  color: slategrey;
+.azul {
+  color: var(--color2);
 }
 
 
@@ -97,9 +102,19 @@ button:hover {
   align-items: center;
 }
 
+.iconos > div > a {
+  margin-bottom: 0;
+  margin-top: 6px;
+}
+
 .iconos img {
   height: 1em;
   aspect-ratio: 1;
+}
+
+.iconos span {
+  font-size: 1rem;
+  font-weight: bolder;
 }
 
 .paddingContainer {
@@ -114,6 +129,10 @@ button:hover {
 
 .hidden {
   display: none !important;
+}
+
+.visible {
+  display: flex !important;
 }
 
 .eliminar {
@@ -187,6 +206,10 @@ button:hover {
   font-size: 14px;
 }
 
+.fa-bars {
+  display: none !important;
+}
+
 /* FOOTER */
 
 .footer {
@@ -217,21 +240,30 @@ button:hover {
   }
 
   /* LANDING PAGE */
+
+  .landingContainer {
+    display: flex;
+    position: relative;
+  }
   
   .landingContainer > img {
     width: 100vw;
     top: 5em;
   }
 
+  .landingContainer > img, .sidebar {
+    flex: 1;
+  }
+
   .sidebar {
     z-index: 1;
     background-color: rgba(255, 255, 255, 0.6);
     position: absolute;
-    top: 5em;
+    top: 0;
     right: 0;
     width: 20%;
     bottom: 0;
-    height: 100vh;
+    height: auto;
     padding: 8em;
   }
 
@@ -286,7 +318,7 @@ button:hover {
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2em;
     padding: 1em 0;
   }
@@ -327,13 +359,34 @@ button:hover {
     color: white;
   }
 
+  .curso .titulo > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .curso .titulo i {
+    font-size: 24px;
+  }
+
+  .curso .crear {
+    margin-bottom: 0;
+    margin-top: 3em;
+  }
+
   .descripcion {
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    /* align-content: space-between; */
+    align-content: space-between;
     width: 100%;
-    /* height: 100%; */
+  }
+
+  .descripcion a {
+    align-self: flex-end;
+    justify-self: flex-end;
+    margin-bottom: 1em;
   }
 
   .progreso {
@@ -346,8 +399,7 @@ button:hover {
 
   .recursos > div {
     display: flex;
-    justify-content: center;
-    gap: 5em;
+    justify-content: space-evenly;
     padding: 2em;
   }
 
@@ -366,7 +418,8 @@ button:hover {
 
   .accesoRapido {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    gap: 2em;
   }
 
   .accesoRapido > div {
@@ -410,13 +463,19 @@ button:hover {
   .hecho {
     text-align: right;
     align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    margin-bottom: 1em;
   }
 
   .hecho span {
-    background-color: var(--color-base);
-    color: white;
-    margin-left: .5em;
     padding: 2px;
+  }
+
+  .hecho i {
+    font-size: 24px;
+    color: var(--color-base);
   }
 
   /* NOSOTROS */
@@ -424,8 +483,7 @@ button:hover {
   .personas {
     display: flex;
     flex-direction: column;
-    gap: 6em;
-    margin-top: 2em;
+    gap: 3em;
   }
 
   .personas > div {
@@ -434,32 +492,38 @@ button:hover {
   }
 
   .datos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3em;
+  }
+
+  .imagen {
+    width: 100%;
     background-color: var(--color-base);
-    margin-top: 1em;
-    margin-bottom: 10em;
   }
 
   .datos img {
     height: 15em;
     border-radius: 50%;
-    margin-top: -1em;
+    margin: -1em 0;
+  }
+
+  .datos > h3 {
+    padding-top: 1em;
+    margin-bottom: 0;
   }
 
   .datos > div {
     text-align: center;
-    margin-bottom: -10em;
   }
   
   .social {   
-    color: var(--color-base);
     font-size: 2.5em;
     display: flex;
     align-items: center;
     justify-content: space-around;
-  }
-
-  .social img {
-    height: 1em;
   }
 
   .sobre-inco {
@@ -516,8 +580,8 @@ button:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    align-self: center;
-    justify-self: center;
+    align-self: center !important;
+    justify-self: center !important;
     text-decoration: none;
     color: black;
     margin-top: 1em;
@@ -543,7 +607,7 @@ button:hover {
     margin-bottom: 100px; 
     padding: 5em;
     text-align: center;
-    background-color: var(--color-fondo); 
+    background-color: white; 
 }
   
 .competenciaForm label {
@@ -631,14 +695,14 @@ button:hover {
 /* Tablet (2 tarjetas) */
 @media screen and (max-width: 1024px) {
   /* Ajustar el ancho de las tarjetas */
-  .grid {
+  .grid, .grid2, .contents {
     grid-template-columns: repeat(2, 1fr);
   }
 
   /* Eliminar el relleno superior */
-  .mainContainerContent {
+  /* .mainContainerContent {
     margin-top: 2em;
-  }
+  } */
 
   /* Ajustar el ancho de los elementos del formulario */
   .competenciaForm input[type="text"],
@@ -653,12 +717,66 @@ button:hover {
   .competenciaForm button[type="submit"] {
     width: 100%;
   }
+
+  /* Ajustar el sidebar */
+  .sidebar {
+    padding: 6em;
+    width: 40%;
+  }
 }
 
 /* Mobile (1 sola tarjeta) */
 @media screen and (max-width: 768px) {
+
+  /* Cambiar distribución de elementos */
+    .footer, .personas > div, .recursos > div, .enlaces, .leccion, .accesoRapido {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .recursos > div {
+      gap: 5em;
+    }
+
+    .loginContainer {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .footer, .footerDcha {
+      text-align: center;
+    }
+
+    .sidebar {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 5em;
+    }
+
+    .landingContainer > img {
+      width: auto;
+      height: 120vh;
+      top: 5em;
+    }
+
+  /* Cambiar padding del contenedor */
+
+  .paddingContainer {
+    padding: 2em 3em;
+  }
+
+  .compContainer {
+    padding: 1em 3em;
+  }
+
+  .loginContainer {
+    padding: 3em;
+  }
+
    /* Mostrar una sola tarjeta en cada fila del grid */
-   .grid {
+   .grid, .grid2, .contents {
     grid-template-columns: 1fr;
   }
 
@@ -677,21 +795,21 @@ button:hover {
   }
 
   /* Ajustar el ancho del logo en el header */
-  .headerContainer .logo {
+  /* .headerContainer .logo {
     width: 4em;
-  }
+  } */
 
   /* Ajustar el tamaño del ícono del botón plus en la página de agregar competencia */
-  .plus .plus-icon {
+  /* .plus .plus-icon {
     width: 120px;
     height: 120px;
     padding: 6px;
-  }
+  } */
 
   /* Ajustar el tamaño del ícono plus en la página de agregar competencia */
-  .plus .fa-plus {
+  /* .plus .fa-plus {
     font-size: 40px;
-  }
+  } */
 
   /* Ajustar el tamaño de las imágenes en la página de recursos */
   .recurso img {
@@ -699,26 +817,73 @@ button:hover {
     height: auto;
   }
 
+  /* Ajustar el tamaño de los elementos del login */
+  .loginContainer img, .loginContainer form {
+    width: 100%;
+  }
+
   /* Ajustar el tamaño de las imágenes en la página de acceso rápido */
-  .accesoRapido img {
-    width: 80%;
+   .accesoRapido > div {
+    width: 70%;
   }
 
   /* Ajustar el tamaño de las imágenes en la página de cursos */
-  .curso > div img {
+  /* .curso > div img {
     width: 100%;
     height: auto;
+  } */
+
+  /* Ajustar el tamaño de las imágenes de la web sobre INCO */
+  .enlaces > div {
+    width: 100%;
   }
 
   /* Ajustar el ancho de las columnas en el footer para la vista móvil */
-.footer {
+/* .footer {
   grid-template-columns: 1fr;
-}
+} */
 
 /* Ajustar el tamaño del logo en el footer para la vista móvil */
 .footer .logo {
-  width: 8em;
+  /* width: 12em; */
   margin: 0 auto;
 }
-Con estas modificaciones, el footer debería verse mejor en dispositivos móviles, con las colum
+
+/* Ajustar el ancho de los títulos de los módulos */
+
+.leccion .titulo {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Hamburguesa */
+
+.fa-bars {
+  display: inline-block !important;
+  font-size: 24px;
+}
+
+/* Menú principal */
+
+.menu {
+  display: none;
+  flex-direction: column;
+  box-sizing: border-box;
+  z-index: 3;
+  background-color: var(--color-base);
+  position: absolute;
+  top: 5em;
+  right: 3em;
+  padding: 0;
+  font-size: 14px;
+  padding: 1em;
+  border: 1px solid lightgray;
+  box-shadow: .3em .3em .5em rgba(0,0,0,0.5);
+  
+}
+
+.menu a, .menu span {
+  margin: .5em;
+}
+
 }

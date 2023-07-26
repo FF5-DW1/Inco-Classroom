@@ -4,18 +4,18 @@
     <div class="titulo">
         <p>Curso 1</p>
         <h4>{{ $curso["title"] }}</h4>
-        <p>Duración: {{ $curso["duration"] }} semanas</p>
+        <div>
+          <p>Duración: {{ $curso["duration"] }} semanas</p>
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
     </div>
     <div class="descripcion">
         <div>
-            <p class="gris">Descripción</p>
+            <p class="azul">Descripción</p>
             <p>{{ $curso["description"] }}</p>
         </div>
         <div class="iconos">
           <div>
-            <i class="fa-solid fa-person-chalkboard"></i>
-            <i class="fa-solid fa-video"></i>
-            {{-- <i class="fa-solid fa-film"></i> --}}
             <a href="https://www.coursera.org/learn/asistencia-tecnica/home/week/1">
                 <img src="{{asset('media/cropped-android-chrome-512x512-1.png')}}" alt="coursera">
             </a>
@@ -23,7 +23,7 @@
           <div>
           <x-editar :curso="$curso" />
           <a href="/cursos/1"><x-ver /></a>
-          <x-eliminar :curso="$curso" />
+          {{-- <x-eliminar :curso="$curso" /> --}}
           </div>
         </div>
     </div>

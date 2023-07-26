@@ -12,7 +12,9 @@
         <div class='headerContainer'>
             <a href="/"><x-logo /></a>
             <div class='derecha'>
-                <a class='link' href="/nosotros">Nosotros</a>
+                <i class="fa-solid fa-bars"></i>
+                <div class="menu">
+                    <a class='link' href="/nosotros">Nosotros</a>
                 <a class='link' href="/faq">FAQ</a>
                 @auth
                 <x-user />
@@ -28,6 +30,7 @@
                     <x-logout />
                 </div>
                 @endauth
+                </div>
             </div>
         </div>
     </header>
