@@ -7,9 +7,12 @@ function plegarPanelUsuario() {
     panelUser.classList.toggle('hidden');
 }
 
-function plegarMenu() {
-    menu.classList.toggle('visible');
+if (plegableUser == null || panelUser == null) {
+    function plegarMenu() {
+        menu.classList.toggle('visible');
+    }
+    hamburger.addEventListener('click', plegarMenu);
 }
 
 plegableUser.addEventListener('click', plegarPanelUsuario);
-hamburger.addEventListener('click', plegarMenu);
+
