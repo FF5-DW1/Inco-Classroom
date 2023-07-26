@@ -7,25 +7,38 @@
     <section class='competencias'>
       <h2>Mis competencias</h2>
       <div class='grid'>
-        @if (!empty($user->competencias))
-          <x-card :competencias="$user->competencias" />
+
+      <?php if (!auth()->user()->isTeacher()) : ?>
+      @if (!empty($user->competencias))
+
+        <x-card :competencias="$user->competencias" />
+          
+        @else
+          <p>No competencias found.//</p>
+        @endif
+        <?php else : ?>
+        
+        @if (!empty($userCompetencias))
+
+        <x-card :competencias="$userCompetencias" />
           
         @else
           <p>No competencias found.</p>
         @endif
+        <?php endif; ?>
+
         <x-plus />
       </div>
     </section>
     <section class='competencias'>
-      <h2>Otros talleres disponibles</h2>
+      <h2>Otros talleres</h2>
       <div class='grid'>
-        @if (!empty($otherCompetencias))
-          @foreach ($otherCompetencias as $competencia)
-            <x-card :competencia="$competencia" />
-          @endforeach
+              @if (!empty($competencias))
+
+        <x-card :competencias="$competencias" />
+          
         @else
-          <!-- Display a message when there are no other competencias -->
-          <p>No other competencias found.</p>
+          <p>No competencias found.</p>
         @endif
         <a href="/home/create">
           <x-plus />

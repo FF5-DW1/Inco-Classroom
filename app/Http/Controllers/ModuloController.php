@@ -67,8 +67,10 @@ class ModuloController extends Controller
             // Update the data
             $modulo->update($validated);
 
-            // Return view in case of success
-            return redirect("/course");
+            $curso = $modulo->curso; 
+
+            // Redirect to the competencia.show route with the slug parameter
+            return redirect()->route('curso.show', ['slug' => $curso->slug]);
         }
 
         public function destroy($id)

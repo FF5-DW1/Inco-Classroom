@@ -77,8 +77,10 @@ class CursoController extends Controller
             // Update the data
             $curso->update($validated);
 
-            // Return view in case of success
-            return redirect("courses");
+            $competencia = $curso->competencia; 
+
+            // Redirect to the competencia.show route with the slug parameter
+            return redirect()->route('competencia.show', ['slug' => $competencia->slug]);
         }
 
         public function destroy($id)

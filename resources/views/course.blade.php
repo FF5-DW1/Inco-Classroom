@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="paddingContainer">
-  <a href="/cursos"><< Mis cursos</a>
+<a href="{{ route('competencia.show', ['slug' => $curso->competencia->slug]) }}"><< Mis cursos</a>
   <h2>{{ $curso->title }}</h2>
   <!-- <div class="recursos">
     <h3>Recursos</h3>

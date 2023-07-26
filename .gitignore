@@ -40,3 +40,4 @@ yarn-error.log
 node_modules
 .DS_Store
 app/.DS_Store
+resources/.DS_Store

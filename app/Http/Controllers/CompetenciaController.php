@@ -19,13 +19,18 @@ class CompetenciaController extends Controller
     {
         $user = Auth::user();
     
+        $competencias=Competencia::all();
+        $userCompetencias = Competencia::where('user_id', $user->id)->get();
         // Retrieve competencias for the logged-in user
-        $competencias = $user->competencias;
-
+        // $competencias = $user->competencias;
         // If the user is a teacher, you can also retrieve other competencias
-        $otherCompetencias = $user->isTeacher() ? Competencia::all() : [];
+        // $otherCompetencias = $user->isTeacher() ? Competencia::all() : [];
     
-        return view('home', compact('competencias', 'otherCompetencias'));
+        return view('home', [
+            "competencias" => $competencias,
+            "userCompetencias" => $userCompetencias,
+            "user" => $user,
+        ]);
     }
 
     public function create()

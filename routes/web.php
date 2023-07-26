@@ -37,7 +37,7 @@ Route::group(['middleware' => ['guest']], function () {
 });
 
 // Ruta de inicio después del login
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [CompetenciaController::class, 'index'])->name('home');
 
 // Rutas de autenticación
 Route::get('/login', [LoginController::class, 'login'])->name('login');
