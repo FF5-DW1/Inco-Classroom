@@ -117,7 +117,7 @@ Route::get('/cursos/create', [CursoController::class, 'create'])->name('curso.cr
 Route::post('/cursos', [CursoController::class, 'store']);
 //edit
 Route::get('/cursos/{id}/edit', [CursoController::class, 'edit'])->name('curso.edit');
-Route::put('/cursos/{slug}', [CursoController::class, 'update']);
+Route::put('/cursos/{id}', [CursoController::class, 'update'])->name('curso.update');
 //delete 
 Route::delete('/cursos/{id}', [CursoController::class, 'destroy'])->name('curso.destroy');
 //show modules of the curso
@@ -129,7 +129,7 @@ Route::get('/modulos/create', [ModuloController::class, 'create'])->name('modulo
 Route::post('/modulos', [ModuloController::class, 'store']);
 //edit
 Route::get('/modulos/{id}/edit', [ModuloController::class, 'edit'])->name('modulo.edit');
-Route::put('/modulos/{slug}', [ModuloController::class, 'update']);
+Route::put('/modulos/{slug}', [ModuloController::class, 'update'])->name('modulo.update');;
 //delete 
 Route::delete('/modulos/{id}', [ModuloController::class, 'destroy'])->name('modulo.destroy');
 

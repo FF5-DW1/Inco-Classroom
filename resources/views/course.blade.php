@@ -2,8 +2,8 @@
 @section('content')
 
 <div class="paddingContainer">
-  <a href="/cursos"><<{{ $curso["title"] }}</a>
-  <h2>Curso 1: Aspectos básicos de la Asistencia Técnica</h2>
+  <a href="/cursos"><< Mis cursos</a>
+  <h2>{{ $curso->title }}</h2>
   <!-- <div class="recursos">
     <h3>Recursos</h3>
     <div>
@@ -23,8 +23,7 @@
     </div>
   </div> -->
   <div class="lecciones">
-    <x-leccion />
-    <x-leccion />
+    <x-leccion :modulos="$curso->modulos" :curso="$curso"/>
     <x-plus3 />
   </div>
 </div>

@@ -8,12 +8,17 @@ use Illuminate\View\Component;
 
 class Crear extends Component
 {
+    public $competencia;
+    public $curso;
+    public $modulo;
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($competencia = null, $curso = null, $modulo = null)
     {
-        //
+        $this->competencia = $competencia;
+        $this->curso = $curso;
+        $this->modulo = $modulo;
     }
 
     /**

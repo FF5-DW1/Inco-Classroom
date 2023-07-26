@@ -14,6 +14,8 @@ class Competencia extends Model
         'slug', 
         'description',
         'image_url',
+        'presentaciones_url',
+        'grabaciones_url',
     ];
 
     public function courses()

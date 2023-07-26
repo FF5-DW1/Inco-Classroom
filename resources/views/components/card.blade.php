@@ -11,6 +11,7 @@
             <div class="iconos">
                     <i class="fa-solid fa-circle-notch" style="font-size: 30px"></i>
                 <span>60%</span>
+                
                 <i class="fa-solid fa-person-chalkboard"></i>
                 <i class="fa-solid fa-video"></i>
                 <i class="fa-solid fa-film"></i>

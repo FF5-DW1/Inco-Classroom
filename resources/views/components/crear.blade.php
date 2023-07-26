@@ -1,3 +1,1 @@
-<a href="/home/create">
-    <button class="botonBlanco ver">CREAR</button>
-</a>
+<button class="botonBlanco ver">CREAR</button>

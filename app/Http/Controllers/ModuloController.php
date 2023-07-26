@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Curso;
 use App\Models\Modulo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 
 class ModuloController extends Controller
 {
@@ -74,24 +77,6 @@ class ModuloController extends Controller
             $modulo = Modulo::findOrFail($id);
             $modulo->delete(); 
         
-            return redirect('/course')->with("modulos", $modulo);
+            return back()->with("success", "Curso deleted successfully.");
         }
-
-
-        // public function show($slug, Modulo $modulo)
-        // {
-        //     $modulo = Modulo::where('slug', $slug)->first();
-        
-        //     if (!$modulo) {
-        //         return abort(404);
-        //     }
-        
-        //     // dd($curso); // Debugging output
-        
-        //     return view('', [
-        //         // "curso" => $curso,
-        //         "modulo" => $modulo,
-        //     ]);
-        // }
-        
 }

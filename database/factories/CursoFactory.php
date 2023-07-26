@@ -21,6 +21,7 @@ class CursoFactory extends Factory
             'title' => $this->faker->sentence,
             'slug' => Str::slug($this->faker->unique()->sentence),
             'description' => $this->faker->sentence(2),
+            'duration' => $this->faker->numberBetween(1, 7),
             'created_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'updated_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
         ];

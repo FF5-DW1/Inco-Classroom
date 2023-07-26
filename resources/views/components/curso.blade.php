@@ -20,19 +20,19 @@
                 <img src="{{asset('media/cropped-android-chrome-512x512-1.png')}}" alt="coursera">
             </a>
           </div>
+          <!-- buttons -->
           <div>
-            <a href="/curso/{{ $curso->id }}/edit">
-                    <x-editar :curso="$curso" />
+            <a href="{{ route('curso.edit', $curso->id) }}">
+                <x-editar :curso="$curso" />
             </a>
             <a href="{{ route('curso.show', $curso->slug) }}">
-                  <x-ver :curso="$curso" />
+                <x-ver :curso="$curso" />
             </a>
-                <form action="/cursos/{{ $curso->id }}" method="POST">
-                    @csrf
-                    @method("DELETE")
-                        <x-eliminar :curso="$curso" />
-                </form>
-
+            <form action="{{ route('curso.destroy', $curso->id) }}" method="POST">
+            @csrf
+            @method("DELETE")
+                <x-eliminar :curso="$curso" />
+            </form>
           </div>
         </div>
     </div>

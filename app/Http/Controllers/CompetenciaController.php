@@ -70,13 +70,11 @@ class CompetenciaController extends Controller
         return view('create.competenciaEdit', compact('competencia'));
     }
     
-
     public function update(Request $request, $id)
     {
         // Validate data
         $validated = $request->validate([
             'title' => 'required',
-            'description' => 'nullable',
             'image_url' => 'nullable|url',
         ]);
 
@@ -90,16 +88,6 @@ class CompetenciaController extends Controller
             return redirect("/home");
         }
 
-        // public function show($id)
-        // {
-        //     // Find the specific Competencia by its ID
-        //     $competencia = Competencia::findOrFail($id);
-        
-        //     return view('courses', [
-        //         "competencia" => $competencia, 
-        //     ]);
-        // }
-
         public function destroy($id)
         {
             // Find the specific Competencia by its ID
@@ -109,20 +97,6 @@ class CompetenciaController extends Controller
             return redirect('/home')->with("competencias", $competencia);
         }
 
-        // public function show(Request $request, $id)
-        // {
-        //     $curso = Competencia::where($id)->first();
-    
-        //     if (!$curso) {
-        //         return abort(404);
-        //     }
-    
-        //     // dd($curso); // Debugging output
-    
-        //     return view('courses', [
-        //         "curso" => $curso,
-        //     ]);
-        // }
         public function show($slug, Competencia $competencia)
         {
             $competencia = Competencia::where('slug', $slug)->first();
@@ -134,7 +108,6 @@ class CompetenciaController extends Controller
             // dd($curso); // Debugging output
         
             return view('courses', [
-                // "curso" => $curso,
                 "competencia" => $competencia,
             ]);
         }

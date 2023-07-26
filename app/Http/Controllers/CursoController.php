@@ -12,21 +12,6 @@ use Illuminate\Support\Str;
 class CursoController extends Controller
 {
 
-    // public function index()
-    // {
-    //     // Get the logged-in user's competencia_id (assuming the relationship is defined in the User model)
-    //     $competenciaId = Auth::user()->competencia_id;
-        
-    //     // Retrieve cursos for the logged-in user's competence (competencia_id)
-    //     $cursos = Curso::where('competencia_id', $competenciaId)->get();
-
-    //     return view('courses', compact('cursos', 'competenciaId'));
-    //     // return view('courses', [
-    //     //     'cursos' => $cursos,
-    //     //     'competenciaId' => $competenciaId, // Pass the $competenciaId variable to the view
-    //     // ]);
-    // }
-
     public function create()
     {
         return view('create.cursoNew');
@@ -64,16 +49,15 @@ class CursoController extends Controller
         // Return view in case of success
         return redirect("/cursos");
     }
-
+    
     public function edit($id)
     {
-        // Find the specific Competencia by its ID
+        // Find the specific Curso by its id
         $curso = Curso::findOrFail($id);
     
-        // Pass the $competencia variable to the view
+        // Pass the $curso variable to the view
         return view('create.cursoEdit', compact('curso'));
     }
-    
 
     public function update(Request $request, $id)
     {
@@ -94,7 +78,7 @@ class CursoController extends Controller
             $curso->update($validated);
 
             // Return view in case of success
-            return redirect("/cursos");
+            return redirect("courses");
         }
 
         public function destroy($id)
@@ -104,36 +88,37 @@ class CursoController extends Controller
             $curso = Curso::findOrFail($id);
             $curso->delete(); 
     
-            return redirect('/cursos')->with("success", "Curso deleted successfully.");
+            return back()->with("success", "Curso deleted successfully.");
         }
     
 
-        public function show($slug, Curso $curso)
-        {
-            $modulo = Curso::where('slug', $slug)->first();
-        
-            if (!$modulo) {
-                return abort(404);
-            }
-        
-            // dd($modulo); // Debugging output
-        
-            return view('course', [
-                "curso" => $curso,
-                // "modulo" => $modulo,
-            ]);
-        }
-        // public function show(Request $request, $slug)
+        // public function show($slug, Curso $curso)
         // {
         //     $curso = Curso::where('slug', $slug)->first();
-
+        
         //     if (!$curso) {
         //         return abort(404);
         //     }
-        //     {{ dd($curso) }};
-        //     return view('curso.show', [
+        
+        //     // dd($modulo); // Debugging output
+        
+        //     return view('course', [
         //         "curso" => $curso,
         //     ]);
         // }
-        
+
+        public function show($slug)
+{
+    $curso = Curso::where('slug', $slug)->first();
+
+    if (!$curso) {
+        return abort(404);
+    }
+
+    // Eager load the modulos related to the curso
+    $curso->load('modulos');
+
+    // Pass the $curso variable to the view
+    return view('course', compact('curso'));
+}
 }

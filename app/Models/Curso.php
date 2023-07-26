@@ -14,8 +14,8 @@ class Curso extends Model
         'description',
         'duration',
         'cursera_url',
-        'presentaciones_url',
-        'grabaciones_url',
+        // 'presentaciones_url',
+        // 'grabaciones_url',
 
     ]; 
 

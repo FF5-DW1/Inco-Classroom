@@ -27,7 +27,9 @@
           <!-- Display a message when there are no other competencias -->
           <p>No other competencias found.</p>
         @endif
-        <x-plus />
+        <a href="/home/create">
+          <x-plus />
+        </a>
       </div>
     </section>
   </div>
