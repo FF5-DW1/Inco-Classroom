@@ -55,9 +55,9 @@ Route::get('/faq', function () {
 })->name('faq');
 
 // Página del curso
-Route::get('/cursos', function () {
-    return view('courses');
-})->name('cursos');
+// Route::get('/cursos', function () {
+//     return view('courses');
+// })->name('cursos');
 
 // Página recursos
 Route::get('/recursos', function () {
@@ -118,7 +118,7 @@ Route::post('/cursos', [CursoController::class, 'store']);
 Route::get('/cursos/{id}/edit', [CursoController::class, 'edit'])->name('curso.edit');
 Route::put('/cursos/{slug}', [CursoController::class, 'update']);
 //delete 
-Route::delete('/cursos/{id}', [CursoController::class, 'destroy']);
+Route::delete('/cursos/{id}', [CursoController::class, 'destroy'])->name('curso.destroy');
 //show modules of the curso
 Route::get('/cursos/{slug}', [CursoController::class, 'show'])->name('curso.show');
 

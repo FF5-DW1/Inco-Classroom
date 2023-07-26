@@ -125,16 +125,16 @@ class CompetenciaController extends Controller
         // }
         public function show($slug, Competencia $competencia)
         {
-            $curso = Competencia::where('slug', $slug)->first();
+            $competencia = Competencia::where('slug', $slug)->first();
         
-            if (!$curso) {
+            if (!$competencia) {
                 return abort(404);
             }
         
             // dd($curso); // Debugging output
         
             return view('courses', [
-                "curso" => $curso,
+                // "curso" => $curso,
                 "competencia" => $competencia,
             ]);
         }
