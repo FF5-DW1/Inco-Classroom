@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CompetenciaController; 
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ModuloController;
 
 /*
 |--------------------------------------------------------------------------
@@ -122,10 +123,20 @@ Route::delete('/cursos/{id}', [CursoController::class, 'destroy'])->name('curso.
 //show modules of the curso
 Route::get('/cursos/{slug}', [CursoController::class, 'show'])->name('curso.show');
 
+//Actions with modulos
+// create
+Route::get('/modulos/create', [ModuloController::class, 'create'])->name('modulo.create');
+Route::post('/modulos', [ModuloController::class, 'store']);
+//edit
+Route::get('/modulos/{id}/edit', [ModuloController::class, 'edit'])->name('modulo.edit');
+Route::put('/modulos/{slug}', [ModuloController::class, 'update']);
+//delete 
+Route::delete('/modulos/{id}', [ModuloController::class, 'destroy'])->name('modulo.destroy');
+
 // Contenido del curso
-Route::get('/cursos/{id}', function () { 
-    return view('course');
-})->name('modulos');
+// Route::get('/cursos/{id}', function () { 
+//     return view('course');
+// })->name('modulos');
 
 
 // Ruta de verificación de correo electrónico

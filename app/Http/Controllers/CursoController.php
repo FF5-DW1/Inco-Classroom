@@ -115,11 +115,11 @@ class CursoController extends Controller
                 return abort(404);
             }
         
-            dd($modulo); // Debugging output
+            // dd($modulo); // Debugging output
         
-            return view('curso.show', [
+            return view('course', [
                 "curso" => $curso,
-                "modulo" => $modulo,
+                // "modulo" => $modulo,
             ]);
         }
         // public function show(Request $request, $slug)

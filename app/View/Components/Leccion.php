@@ -11,9 +11,11 @@ class Leccion extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $modulos;
+
+    public function __construct($modulos = [])
     {
-        //
+        $this->modulos = $modulos;
     }
 
     /**

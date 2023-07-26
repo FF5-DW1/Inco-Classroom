@@ -21,15 +21,11 @@
             </a>
           </div>
           <div>
-            <x-editar :curso="$curso" />
+
             <a href="{{ route('curso.show', $curso->slug) }}">
                   <x-ver :curso="$curso" />
             </a>
-                <form action="{{ route('curso.destroy', $curso->id) }}" method="POST">
-                  @csrf
-                  @method("DELETE")
-                    <x-eliminar :curso="$curso" />
-                </form>
+
 
           </div>
         </div>

@@ -2,9 +2,9 @@
 @section('content')
 
 <div class="paddingContainer">
-  <a href="/cursos"><< Competencias TI</a>
+  <a href="/cursos"><<{{ $curso["title"] }}</a>
   <h2>Curso 1: Aspectos básicos de la Asistencia Técnica</h2>
-  <div class="recursos">
+  <!-- <div class="recursos">
     <h3>Recursos</h3>
     <div>
       <div>
@@ -21,7 +21,7 @@
         <a href="https://www.coursera.org/learn/asistencia-tecnica/home/week/1">Coursera >></a>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="lecciones">
     <x-leccion />
     <x-leccion />

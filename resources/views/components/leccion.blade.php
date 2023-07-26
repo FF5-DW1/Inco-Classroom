@@ -13,3 +13,4 @@
     <div class="hecho gris">Hecho <span><i class="fa-solid fa-check"></i></span></div>
   </div>
 </div>
+@endforeach
