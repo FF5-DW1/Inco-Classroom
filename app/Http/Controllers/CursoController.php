@@ -99,6 +99,7 @@ class CursoController extends Controller
 
         public function destroy($id)
         {
+            // dd($id);
             // Find the specific Curso by its ID
             $curso = Curso::findOrFail($id);
             $curso->delete(); 

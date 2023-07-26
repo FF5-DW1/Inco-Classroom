@@ -9,12 +9,16 @@ use Illuminate\View\Component;
 class Editar extends Component
 {
     public $competencia;
+    public $curso;
+    public $modulo;
     /**
      * Create a new component instance.
      */
-    public function __construct($competencia)
+    public function __construct($competencia = null, $curso = null, $modulo = null)
     {
         $this->competencia = $competencia;
+        $this->curso = $curso;
+        $this->modulo = $modulo;
     }
 
     /**
