@@ -724,6 +724,11 @@ button:hover {
     width: 100%;
   }
 
+  /* Ajustar el ancho de la barra de búsqueda */
+  #search input {
+    width: 55%;
+  }
+
   /* Ajustar el sidebar */
   .sidebar {
     padding: 6em;
@@ -798,6 +803,11 @@ button:hover {
   /* Ajustar el ancho del botón de envío en el formulario */
   .competenciaForm button[type="submit"] {
     width: 100%;
+  }
+
+  /* Ajustar el ancho de la barra de búsqueda */
+  #search input {
+    width: 70%;
   }
 
   /* Ajustar el ancho del logo en el header */
