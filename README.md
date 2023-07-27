@@ -42,6 +42,11 @@ h1 {
   margin-bottom: 10px;
 }
 
+.tools-heading {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
 .methodology-heading {
   font-weight: bold;
   margin-bottom: 10px;
@@ -97,6 +102,17 @@ h1 {
   <p>Herramienta para definir tareas de construcción de activos, como la compilación de archivos CSS y JS, mejorando el rendimiento.</p>
   <p class="technologies-heading"><strong>Git / GitHub:</strong></p>
   <p>Sistema de control de versiones y plataforma de alojamiento de código para la colaboración en el desarrollo del proyecto.</p>
+  <h2><strong>Herramientas Utilizadas</strong></h2>
+  <p class="tools-heading"><strong>Trello:</strong></p>
+  <p>Plataforma para la gestión y organización de proyectos en equipo utilizando tableros y listas.</p>
+  <p class="tools-heading"><strong>Figma:</strong></p>
+  <p>Herramienta de diseño gráfico y prototipado para crear la interfaz de usuario de la plataforma.</p>
+  <p class="tools-heading"><strong>Slack:</strong></p>
+  <p>Plataforma de comunicación para mantener la colaboración y la comunicación en tiempo real entre el equipo.</p>
+  <p class="tools-heading"><strong>Zoom:</strong></p>
+  <p>Herramienta de videollamadas y conferencias para realizar reuniones de equipo y presentaciones.</p>
+  <p class="tools-heading"><strong>Google Meet:</strong></p>
+  <p>Otra herramienta de videollamadas y conferencias utilizada para reuniones y comunicación interna.</p>
   <h2><strong>Metodología de Trabajo</strong></h2>
   <p class="methodology-heading"><strong>Scrum y Sprints:</strong></p>
   <p>Organizamos el desarrollo en Sprints de corta duración, donde cada Sprint representa una iteración de trabajo.</p>
