@@ -1,3 +1,33 @@
+Inco-Classroom - Web de cursos para la empresa INCO
+<p align="center">
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
+</p>
+<p align="center">
+  <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+  <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+  <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+  <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
+Acerca de Inco-Classroom
+Inco-Classroom es una plataforma web de cursos desarrollada para la empresa INCO. Esta plataforma ha sido creada utilizando tecnologías como Laravel, PHP, Docker, MySQL/phpMyAdmin, HTML, CSS, JS y PHP. La web es completamente mobile y responsive, permitiendo a los usuarios acceder desde cualquier dispositivo.
+
+Características Principales
+Autenticación y Registro de Usuarios: Los usuarios pueden elegir cómo iniciar sesión en la plataforma, proporcionando opciones para facilitar el acceso.
+
+Gestión de Cursos: Los usuarios pueden acceder a una pantalla donde se listan todos los cursos disponibles, así como ver el progreso individual en cada uno de ellos.
+
+Búsqueda de Cursos: Inco-Classroom cuenta con una barra de búsqueda que permite a los usuarios encontrar cursos específicos por su título o contenido.
+
+Funcionalidades para el Usuario ADMIN: Los administradores tienen privilegios adicionales, como crear, editar y eliminar cursos en la plataforma.
+
+
+
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
