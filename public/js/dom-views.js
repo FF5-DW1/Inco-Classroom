@@ -10,6 +10,13 @@ const unchecked = document.querySelectorAll('.unchecked');
 const hecho = document.querySelectorAll('.hecho');
 const noHecho = document.querySelectorAll('.no-hecho');
 
+
+const despCalendario = document.querySelectorAll('.despcalendario');
+const semana = document.querySelectorAll('.programa');
+
+
+
+
 if (plegableCursos == null || tarjetasCursos == null) {
     Array.from(plegarFaq).forEach(function (item) {
         item.addEventListener('click', function () {
@@ -46,10 +53,18 @@ if (plegableCursos == null || tarjetasCursos == null) {
                 checked[index].classList.remove('hidden');
             })
         })
+        if (hecho == null || noHecho == null || checked == null   || unchecked == null  ){
+            Array.from(despCalendario).forEach(function (item) {
+                item.addEventListener('click', function () {
+                    const index = Array.from(checked).indexOf(item);
+                    semana[index].classList.toggle('hidden');
+                })
+            });
+        }
     } else {
         function plegarCursos() {
             tarjetasCursos.classList.toggle('hidden');
         }
 
         plegableCursos.addEventListener('click', plegarCursos);
-    }
+    }}

@@ -38,10 +38,15 @@
     </div>
     <h2>Calendario</h2>
     <div class="calendario">
-        <h3>Semana 1 <i class="fa-solid fa-chevron-down"></i></h3>
-        <h3>Semana 2 <i class="fa-solid fa-chevron-down"></i></h3>
-            <h3>Semana 3 <i class="fa-solid fa-chevron-down"></i></h3>
-                <h3>Semana 4 <i class="fa-solid fa-chevron-down"></i></h3>
+        <h3>Semana 1 <i class="fa-solid fa-chevron-down despcalendario"></i></h3>
+            <div class= "programa"></div>
+        <h3>Semana 2 <i class="fa-solid fa-chevron-down despcalendario"></i></h3>
+        <div class= "programa"></div>
+            <h3>Semana 3 <i class="fa-solid fa-chevron-down despcalendario"></i></h3>
+            <div></div>
+                <h3>Semana 4 <i class="fa-solid fa-chevron-down despcalendario"></i></h3>
+            <div class= "programa"></div>
+
     </div>
 </div>
 <script src="{{asset('js/dom-views.js')}}"></script>
