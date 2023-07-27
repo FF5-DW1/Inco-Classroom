@@ -53,3 +53,4 @@ if (plegableCursos == null || tarjetasCursos == null) {
 
         plegableCursos.addEventListener('click', plegarCursos);
     }
+}
