@@ -604,19 +604,20 @@ button:hover {
     justify-self: center !important;
   }
 
-  /* AÑADIR COMPETENCIA */
+  /* AÑADIR COMPETENCIA, CURSO O MÓDULO */
 
-  .competenciaForm {
+  .competenciaForm, .cursoForm, .moduloForm {
     max-width: 400px;
     margin: auto;
     margin-top: 100px;
     margin-bottom: 100px; 
     padding: 5em;
     text-align: center;
-    background-color: white; 
+    border: 1px solid var(--color2);
+    border-radius: .5em;
 }
   
-.competenciaForm label {
+.competenciaForm label, .cursoForm label, .moduloForm label {
     display: block;
     margin-bottom: 5px;
     color: var(--color-base);
@@ -624,24 +625,35 @@ button:hover {
   }
   
   .competenciaForm input[type="text"],
-  .competenciaForm textarea {
+  .competenciaForm textarea, 
+  .cursoForm input[type="text"],
+  .cursoForm textarea, 
+  .moduloForm input[type="text"],
+  .moduloForm textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid var(--color-base);
   }
   
-  .competenciaForm textarea {
+  .competenciaForm textarea,
+  .cursoForm textarea,
+  .moduloForm textarea {
     resize: vertical;
   }
   
-  .competenciaForm button[type="submit"] {
+  .competenciaForm button[type="submit"],
+  .cursoForm button[type="submit"],
+  .moduloForm button[type="submit"] {
     background-color: var(--color-base);
     color: #FFFFFF;
     cursor: pointer;
   }
   
-  .competenciaForm button[type="submit"]:hover {
+  .competenciaForm button[type="submit"]:hover,
+  .cursoForm button[type="submit"]:hover,
+  .moduloForm button[type="submit"]:hover
+   {
     background-color: #143A7E;
   }
 
@@ -712,7 +724,11 @@ button:hover {
 
   /* Ajustar el ancho de los elementos del formulario */
   .competenciaForm input[type="text"],
-  .competenciaForm textarea {
+  .competenciaForm textarea,
+  .cursoForm input[type="text"],
+  .cursoForm textarea, 
+  .moduloForm input[type="text"],
+  .moduloForm textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -720,7 +736,10 @@ button:hover {
   }
 
   /* Ajustar el ancho del botón de envío en el formulario */
-  .competenciaForm button[type="submit"] {
+  .competenciaForm button[type="submit"],
+  .cursoForm button[type="submit"],
+  .moduloForm button[type="submit"]
+   {
     width: 100%;
   }
 
@@ -793,7 +812,11 @@ button:hover {
 
   /* Ajustar el ancho de los elementos del formulario */
   .competenciaForm input[type="text"],
-  .competenciaForm textarea {
+  .competenciaForm textarea,
+  .cursoForm input[type="text"],
+  .cursoForm textarea, 
+  .moduloForm input[type="text"],
+  .moduloForm textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -801,7 +824,9 @@ button:hover {
   }
 
   /* Ajustar el ancho del botón de envío en el formulario */
-  .competenciaForm button[type="submit"] {
+  .competenciaForm button[type="submit"],
+  .cursoForm button[type="submit"],
+  .moduloForm button[type="submit"] {
     width: 100%;
   }
 
