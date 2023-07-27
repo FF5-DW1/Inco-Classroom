@@ -849,6 +849,12 @@ button:hover {
   grid-template-columns: 1fr;
 } */
 
+/* Ajustar el tamaño del logo en el header para la vista móvil */
+.headerContainer .logo {
+  /* width: 12em; */
+  margin: 0 auto;
+}
+
 /* Ajustar el tamaño del logo en el footer para la vista móvil */
 .footer .logo {
   /* width: 12em; */
@@ -867,6 +873,7 @@ button:hover {
 .fa-bars {
   display: inline-block !important;
   font-size: 24px;
+  margin: 0 2em;
 }
 
 /* Menú principal */
