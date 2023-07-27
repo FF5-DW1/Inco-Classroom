@@ -598,6 +598,12 @@ br {
     align-items: center;
   }
 
+  .faq .botones {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+  }
+
   /* NUEVA COMPETENCIA / CURSO */
 
   .plus {
