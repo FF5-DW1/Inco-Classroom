@@ -5,7 +5,7 @@
         </a>
         <div>
             <div>
-                <p>Curso</p>
+                <p class="azul">Curso</p>
                 <h4>{{ $competencia["title"] }}</h4>
             </div>
             <div class="iconos">
@@ -29,6 +29,7 @@
                     @method("DELETE")
                         <x-eliminar :competencia="$competencia" />
                 </form>
+                </div>
             </div>
         </div>
     </div>

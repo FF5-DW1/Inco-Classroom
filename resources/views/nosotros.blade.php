@@ -5,9 +5,11 @@
     <div class="equipo">
         <h2>El equipo</h2>
         <div class="personas">
-            <div class="datos">
-                <div>
-                    <img src="{{asset('media/Ángel.jpg')}}" alt="">
+            <div>    
+                <div class="datos">
+                    <div class="imagen">
+                        <img src="{{asset('media/Ángel.jpg')}}" alt="Angel">
+                    </div>
                     <h3>Ángel Cruz</h3>
                     <p>Facilitador IT</p>
                     <div class="social">
@@ -16,8 +18,10 @@
                         </a>                       
                     </div>                   
                 </div>
-                <div>
-                    <img src="{{asset('media/Ana.jpg')}}" alt="">
+                <div class="datos">
+                    <div class="imagen">
+                        <img src="{{asset('media/Ana.jpg')}}" alt="Ana">
+                    </div>                   
                     <h3>Ana de Miguel</h3>
                     <p>Program Manager</p>
                     <div class="social">
@@ -26,8 +30,10 @@
                         </a>   
                     </div>                    
                 </div>
-                <div>
-                    <img src="{{asset('media/Teresa.jpg')}}" alt="">
+                <div class="datos">
+                    <div class="imagen">
+                        <img src="{{asset('media/Teresa.jpg')}}" alt="Teresa">
+                    </div>
                     <h3>Teresa Amézola</h3>
                     <p>Formadora Empleabilidad</p>
                     <div class="social">
@@ -37,9 +43,11 @@
                     </div>                    
                 </div>  
             </div>
-            <div class="datos">
-                <div>
-                    <img src="{{asset('media/Marina.jpg')}}" alt="">
+            <div>
+                <div class="datos">
+                    <div class="imagen">
+                        <img src="{{asset('media/Marina.jpg')}}" alt="Marina">
+                    </div>
                     <h3>Marina Díaz</h3>
                     <p>Formadora Empleabilidad</p>
                     <div class="social">
@@ -48,8 +56,10 @@
                         </a>   
                     </div>                   
                 </div>
-                <div>
-                    <img src="{{asset('media/Patricia.jpg')}}" alt="">
+                <div class="datos">
+                    <div class="imagen">
+                        <img src="{{asset('media/Patricia.jpg')}}" alt="Patricia">
+                    </div>
                     <h3>Patricia Hidalgo</h3>
                     <p>Formadora Empleabilidad</p>
                     <div class="social">
