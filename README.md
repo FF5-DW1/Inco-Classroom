@@ -62,7 +62,7 @@ h1 {
   </style>
 </head>
 <body>
-  <h1>Inco-Classroom - Plataforma de Cursos para la Empresa INCO</h1>
+  <h1><strong>Inco-Classroom</strong> - Plataforma de Cursos para la Empresa <em>INCO</em></h1>
   <div class="logo-container">
     <img class="logo" src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg"
       alt="Laravel Logo">
@@ -74,45 +74,45 @@ h1 {
     <a href="https://packagist.org/packages/laravel/framework" class="badge"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
     <a href="https://packagist.org/packages/laravel/framework" class="badge"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
   </p>
-  <h2>Acerca de Inco-Classroom</h2>
-  <p>Inco-Classroom es una plataforma web de cursos desarrollada para la empresa INCO. La plataforma ha sido creada utilizando Laravel, PHP, Docker, MySQL/phpMyAdmin,
-    HTML, CSS, JS y PHP, con un enfoque mobile-first y responsive para brindar una experiencia óptima en cualquier dispositivo.</p>
-  <h2>Características Principales</h2>
+  <h2><strong>Acerca de Inco-Classroom</strong></h2>
+  <p>Inco-Classroom es una plataforma web de cursos desarrollada para la empresa INCO. La plataforma ha sido creada utilizando <strong>Laravel</strong>, <strong>PHP</strong>, <strong>Docker</strong>, <strong>MySQL</strong>/phpMyAdmin,
+    <strong>HTML</strong>, <strong>CSS</strong>, <strong>JS</strong> y <strong>PHP</strong>, con un enfoque <em>mobile-first</em> y <em>responsive</em> para brindar una experiencia óptima en cualquier dispositivo.</p>
+  <h2><strong>Características Principales</strong></h2>
   <ul class="feature-list">
-    <li>Autenticación y Registro de Usuarios: Los usuarios pueden elegir cómo iniciar sesión en la plataforma, proporcionando opciones para facilitar el acceso.</li>
-    <li>Gestión de Cursos: Los usuarios pueden acceder a una pantalla donde se listan todos los cursos disponibles, así como ver el progreso individual en cada uno de ellos.</li>
-    <li>Búsqueda de Cursos: Inco-Classroom cuenta con una barra de búsqueda que permite a los usuarios encontrar cursos específicos por su título o contenido.</li>
-    <li>Funcionalidades para el Usuario ADMIN: Los administradores tienen privilegios adicionales, como crear, editar y eliminar cursos en la plataforma.</li>
+    <li><strong>Autenticación y Registro de Usuarios:</strong> Los usuarios pueden elegir cómo iniciar sesión en la plataforma, proporcionando opciones para facilitar el acceso.</li>
+    <li><strong>Gestión de Cursos:</strong> Los usuarios pueden acceder a una pantalla donde se listan todos los cursos disponibles, así como ver el progreso individual en cada uno de ellos.</li>
+    <li><strong>Búsqueda de Cursos:</strong> Inco-Classroom cuenta con una barra de búsqueda que permite a los usuarios encontrar cursos específicos por su título o contenido.</li>
+    <li><strong>Funcionalidades para el Usuario ADMIN:</strong> Los administradores tienen privilegios adicionales, como crear, editar y eliminar cursos en la plataforma.</li>
   </ul>
-  <h2>Tecnologías Utilizadas</h2>
-  <p class="technologies-heading">PHP:</p>
+  <h2><strong>Tecnologías Utilizadas</strong></h2>
+  <p class="technologies-heading"><strong>PHP:</strong></p>
   <p>Lenguaje de programación de servidor utilizado para manejar la lógica del servidor y la comunicación con la base de datos.</p>
-  <p class="technologies-heading">Docker:</p>
+  <p class="technologies-heading"><strong>Docker:</strong></p>
   <p>Plataforma para desarrollar, implementar y ejecutar aplicaciones mediante contenedores, facilitando el despliegue y la portabilidad.</p>
-  <p class="technologies-heading">MySQL / phpMyAdmin:</p>
+  <p class="technologies-heading"><strong>MySQL / phpMyAdmin:</strong></p>
   <p>Sistema de gestión de bases de datos relacional y herramienta de administración para la gestión de la base de datos.</p>
-  <p class="technologies-heading">HTML, CSS y JS:</p>
+  <p class="technologies-heading"><strong>HTML, CSS y JS:</strong></p>
   <p>Tecnologías fundamentales para el desarrollo de la interfaz de usuario y la interactividad en la plataforma.</p>
-  <p class="technologies-heading">Laravel Mix:</p>
+  <p class="technologies-heading"><strong>Laravel Mix:</strong></p>
   <p>Herramienta para definir tareas de construcción de activos, como la compilación de archivos CSS y JS, mejorando el rendimiento.</p>
-  <p class="technologies-heading">Git / GitHub:</p>
+  <p class="technologies-heading"><strong>Git / GitHub:</strong></p>
   <p>Sistema de control de versiones y plataforma de alojamiento de código para la colaboración en el desarrollo del proyecto.</p>
-  <h2>Metodología de Trabajo</h2>
-  <p class="methodology-heading">Scrum y Sprints:</p>
+  <h2><strong>Metodología de Trabajo</strong></h2>
+  <p class="methodology-heading"><strong>Scrum y Sprints:</strong></p>
   <p>Organizamos el desarrollo en Sprints de corta duración, donde cada Sprint representa una iteración de trabajo.</p>
-  <p class="methodology-heading">Reuniones Diarias:</p>
+  <p class="methodology-heading"><strong>Reuniones Diarias:</strong></p>
   <p>Realizamos reuniones diarias para mantenernos informados y coordinar nuestras actividades.</p>
-  <p class="methodology-heading">Desarrollo Iterativo e Incremental:</p>
+  <p class="methodology-heading"><strong>Desarrollo Iterativo e Incremental:</strong></p>
   <p>Entregamos partes funcionales del proyecto en cada Sprint, obteniendo retroalimentación temprana.</p>
-  <p class="methodology-heading">Colaboración y Comunicación:</p>
+  <p class="methodology-heading"><strong>Colaboración y Comunicación:</strong></p>
   <p>Fomentamos la colaboración y utilizamos herramientas de comunicación para mantenernos conectados.</p>
-  <p class="methodology-heading">Flexibilidad y Adaptabilidad:</p>
+  <p class="methodology-heading"><strong>Flexibilidad y Adaptabilidad:</strong></p>
   <p>Estamos abiertos a nuevas ideas y dispuestos a adaptarnos a los cambios.</p>
-  <p class="methodology-heading">Pruebas y Calidad del Código:</p>
+  <p class="methodology-heading"><strong>Pruebas y Calidad del Código:</strong></p>
   <p>Realizamos pruebas y revisiones de código para garantizar la calidad del desarrollo.</p>
-  <p class="methodology-heading">MVP (Minimum Viable Product):</p>
+  <p class="methodology-heading"><strong>MVP (Minimum Viable Product):</strong></p>
   <p>Nuestro enfoque inicial ha sido desarrollar un MVP de la plataforma para ofrecer una experiencia funcional a los usuarios.</p>
-  <h2>Licencia</h2>
-  <p class="license">Inco-Classroom es software de código abierto con licencia MIT.</p>
+  <h2><strong>Licencia</strong></h2>
+  <p class="license">Inco-Classroom es software de código abierto con licencia <strong>MIT</strong>.</p>
 </body>
 </html>
