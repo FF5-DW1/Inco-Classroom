@@ -114,7 +114,7 @@ Route::get('{slug}', [CompetenciaController::class, 'show'])->name('competencia.
 //Actions with courses
 // create
 Route::get('/cursos/create', [CursoController::class, 'create'])->name('curso.create');
-Route::post('/cursos', [CursoController::class, 'store']);
+Route::post('/cursos', [CursoController::class, 'store'])->name('curso.store');
 //edit
 Route::get('/cursos/{id}/edit', [CursoController::class, 'edit'])->name('curso.edit');
 Route::put('/cursos/{id}', [CursoController::class, 'update'])->name('curso.update');

@@ -1,4 +1,4 @@
-@foreach ($cursos as $curso)
+@foreach($cursos as $curso)
 
   <div class="curso card2">
     <div class="titulo">
@@ -16,8 +16,8 @@
             <!-- <i class="fa-solid fa-person-chalkboard"></i>
             <i class="fa-solid fa-video"></i>
             {{-- <i class="fa-solid fa-film"></i> --}} -->
-            <a href="https://www.coursera.org/learn/asistencia-tecnica/home/week/1">
-                <img src="{{asset('media/cropped-android-chrome-512x512-1.png')}}" alt="coursera">
+            <a href="{{ $curso['cursera_url'] }}">
+              <img src="{{ asset('media/cropped-android-chrome-512x512-1.png') }}" alt="coursera">
             </a>
           </div>
           <!-- buttons -->

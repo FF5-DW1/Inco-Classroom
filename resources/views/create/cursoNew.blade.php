@@ -3,7 +3,7 @@
 @section('title', 'Crear nuevo Curso')
 
 @section ('content')
-<form method="POST" action="{{ route('home') }}" class="cursoForm">
+<form method="POST" action="{{ route('curso.store') }}" class="cursoForm">
     @csrf
     <h2>Crear Curso nuevo</h2>
     <div>
@@ -17,6 +17,13 @@
         <label for="description">Descripcion:</label>
         <input type="text" id="description" name="description" required>
         @error('description')
+        <div class="form-error">{{ $message }}</div>
+        @enderror
+    </div>
+    <div>
+        <label for="duration">Duration:</label>
+        <input type="text" id="duration" name="duration" required>
+        @error('duration')
         <div class="form-error">{{ $message }}</div>
         @enderror
     </div>

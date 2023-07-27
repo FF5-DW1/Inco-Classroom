@@ -48,6 +48,11 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function competencia()
+    {
+        return $this->hasMany(Competencia::class);
+    }
+
     public function isTeacher()
     {
         return $this->teacher;

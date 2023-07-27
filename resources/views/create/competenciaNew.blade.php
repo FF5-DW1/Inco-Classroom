@@ -1,6 +1,6 @@
 @extends ('layouts.main')
 
-@section('title', 'Editar Competencia')
+@section('title', 'Crear Competencia')
 
 @section ('content')
 <form method="POST" action="{{ route('home') }}" class="competenciaForm">

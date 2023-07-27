@@ -18,7 +18,7 @@ class Competencia extends Model
         'grabaciones_url',
     ];
 
-    public function courses()
+    public function cursos()
     {
         return $this->hasMany(Curso::class);
     }

@@ -19,7 +19,7 @@
               {{-- <input type="submit" value="Login"> --}}
               <x-loginbutton />
           </form>
-      <img src="{{asset ('media/illust-login.avif')}}" alt='login' />
+      <img src="{{asset ('media/illust-login.png')}}" alt='login' />
     </div>
 
 @endsection

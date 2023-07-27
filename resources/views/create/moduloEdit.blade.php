@@ -16,7 +16,7 @@
         <input type="text" id="description" name="description" value="{{ $modulo->description }}" required>
     </div>
     <div>
-        <label for="duration">Cursera URL:</label>
+        <label for="duration">Duracion:</label>
         <input type="text" id="duration" name="duration" value="{{ $modulo->duration }}">
     </div>
 

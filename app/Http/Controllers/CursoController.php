@@ -18,37 +18,45 @@ class CursoController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $slug = Str::slug($request->title, '-'); 
+{
+    // Validate data
+    $validated = $request->validate([
+        'title' => 'required',
+        'description' => 'required',
+        'duration' => 'required',
+        'cursera_url' => 'nullable|url',
+        'presentaciones_url' => 'nullable|url',
+        'grabaciones_url' => 'nullable|url',
+    ]);
 
-        $exists = Curso::where('slug', $slug)->first(); 
+    // Generate the slug from the title
+    $slug = Str::slug($request->title, '-');
 
-        if($exists){
-            return redirect()->route('courses')->withErrors(['title' => 'Ese titulo ya existe']); 
+    // Check if the generated slug already exists in the database
+    $exists = Curso::where('slug', $slug)->exists();
+
+    // If the slug exists, append a unique number to the end of the slug
+    if ($exists) {
+        $count = 1;
+        while (Curso::where('slug', "{$slug}-{$count}")->exists()) {
+            $count++;
         }
-        // dd($slug); 
-
-        // validate data
-        $validated = $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'image_url' => 'nullable|url',
-            'coursera_url' => 'nullable|url',
-            'presentaciones_url' => 'nullable|url',
-            'grabaciones_url' => 'nullable|url',
-
-        ]);
-
-        // Save the data
-        // Competencia::create($validated);
-        $curso = Curso::create([
-            'title' => $request ->title, 
-            'slug' => $slug, 
-        ]); 
-
-        // Return view in case of success
-        return redirect("/cursos");
+        $slug = "{$slug}-{$count}";
     }
+
+    // Add the 'slug' field to the validated data
+    $validated['slug'] = $slug;
+
+    // Get the logged-in user's competencia
+    $competencia = Auth::user()->competencia;
+
+    // Save the data and associate it with the competencia
+    $curso = $competencia->cursos()->create($validated);
+
+    // Redirect to the curso.show route with the generated slug
+    return redirect()->route('curso.show', ['slug' => $slug]);
+}
+
     
     public function edit($id)
     {

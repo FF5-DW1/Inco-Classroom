@@ -40,30 +40,36 @@ class CompetenciaController extends Controller
 
     public function store(Request $request)
     {
-        $slug = Str::slug($request->title, '-'); 
 
-        $exists = Competencia::where('slug', $slug)->first(); 
+    $slug = Str::slug($request->title, '-');
+    // if already exists
+    $exists = Competencia::where('slug', $slug)->first();
+    if ($exists) {
+        return redirect()->route('home')->withErrors(['title' => 'Ese titulo ya existe']);
+    }
 
-        if($exists){
-            return redirect()->route('home')->withErrors(['title' => 'Ese titulo ya existe']); 
-        }
-        // dd($slug); 
+    // Validate data
+    $validated = $request->validate([
+        'title' => 'required',
+        'image_url' => 'nullable|url',
+    ]);
 
-        // validate data
-        $validated = $request->validate([
-            'title' => 'required',
-            'image_url' => 'nullable|url',
-        ]);
+    // Get the ID of the authenticated user
+    $userId = Auth::id();
 
-        // Save the data
-        // Competencia::create($validated);
-        $competencia = Competencia::create([
-            'title' => $request ->title, 
-            'slug' => $slug, 
-        ]); 
+    // dd($userId);
 
-        // Return view in case of success
-        return redirect("/home");
+    // Save the data and associate it with the authenticated user
+    $competencia = new Competencia([
+        'title' => $request->title,
+        'slug' => $slug,
+        'user_id' => $userId, 
+    ]);
+    
+    $competencia->save();
+
+    // Return view in case of success
+    return redirect("/home");
     }
 
     public function edit($id)
@@ -102,19 +108,33 @@ class CompetenciaController extends Controller
             return redirect('/home')->with("competencias", $competencia);
         }
 
-        public function show($slug, Competencia $competencia)
+            public function show($slug, Competencia $competencia)
         {
-            $competencia = Competencia::where('slug', $slug)->first();
-        
+            $competencia = Competencia::with('cursos')->where('slug', $slug)->first();
+
             if (!$competencia) {
                 return abort(404);
             }
-        
-            // dd($curso); // Debugging output
-        
+
             return view('courses', [
                 "competencia" => $competencia,
             ]);
         }
+
+
+        // public function show($slug, Competencia $competencia)
+        // {
+        //     $competencia = Competencia::where('slug', $slug)->first();
+        
+        //     if (!$competencia) {
+        //         return abort(404);
+        //     }
+        
+        //     // dd($curso); // Debugging output
+        
+        //     return view('courses', [
+        //         "competencia" => $competencia,
+        //     ]);
+        // }
         
 }

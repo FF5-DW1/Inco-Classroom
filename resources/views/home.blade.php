@@ -9,25 +9,28 @@
       <div class='grid'>
 
       <?php if (!auth()->user()->isTeacher()) : ?>
-      @if (!empty($user->competencias))
+        @if (!empty($user->competencias))
 
-        <x-card :competencias="$user->competencias" />
+          <x-card :competencias="$user->competencias" />
+            
+          @else
+            <p>No competencias found.//</p>
+          @endif
           
-        @else
-          <p>No competencias found.//</p>
-        @endif
         <?php else : ?>
         
-        @if (!empty($userCompetencias))
+          @if (!empty($userCompetencias))
 
-        <x-card :competencias="$userCompetencias" />
-          
-        @else
-          <p>No competencias found.</p>
-        @endif
+          <x-card :competencias="$userCompetencias" />
+            
+          @else
+            <p>No competencias found.</p>
+          @endif
         <?php endif; ?>
 
-        <x-plus />
+        <a href="{{ route('home.create') }}">
+          <x-plus />
+        </a>
       </div>
     </section>
     <section class='competencias'>
@@ -40,9 +43,6 @@
         @else
           <p>No competencias found.</p>
         @endif
-        <a href="/home/create">
-          <x-plus />
-        </a>
       </div>
     </section>
   </div>
