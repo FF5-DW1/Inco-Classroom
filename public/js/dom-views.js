@@ -10,15 +10,11 @@ const unchecked = document.querySelectorAll('.unchecked');
 const hecho = document.querySelectorAll('.hecho');
 const noHecho = document.querySelectorAll('.no-hecho');
 
-
 const despCalendario = document.querySelectorAll('.despcalendario');
 const semana = document.querySelectorAll('.programa');
 
-
-
-
 if (plegableCursos == null || tarjetasCursos == null) {
-    Array.from(plegarFaq).forEach(function (item) {
+   Array.from(plegarFaq).forEach(function (item) {
         item.addEventListener('click', function () {
             const index = Array.from(plegarFaq).indexOf(item);
             preguntas[index].classList.add('hidden');
@@ -34,37 +30,39 @@ if (plegableCursos == null || tarjetasCursos == null) {
             plegarFaq[index].classList.remove('hidden');
         })
     });
-    if (desplegarFaq == null || plegarFaq == null || preguntas == null) {
-        Array.from(checked).forEach(function (item) {
-            item.addEventListener('click', function () {
-                const index = Array.from(checked).indexOf(item);
-                hecho[index].classList.add('hidden');
-                noHecho[index].classList.remove('hidden');
-                unchecked[index].classList.remove('hidden');
-                checked[index].classList.add('hidden');
-            })
-        });
-        Array.from(unchecked).forEach(function (item) {
-            item.addEventListener('click', function () {
-                const index = Array.from(unchecked).indexOf(item);
-                hecho[index].classList.remove('hidden');
-                noHecho[index].classList.add('hidden');
-                unchecked[index].classList.add('hidden');
-                checked[index].classList.remove('hidden');
-            })
+    Array.from(checked).forEach(function (item) {
+        item.addEventListener('click', function () {
+            const index = Array.from(checked).indexOf(item);
+            hecho[index].classList.add('hidden');
+            noHecho[index].classList.remove('hidden');
+            unchecked[index].classList.remove('hidden');
+            checked[index].classList.add('hidden');
+            alert('clicado')
         })
-        if (hecho == null || noHecho == null || checked == null   || unchecked == null  ){
-            Array.from(despCalendario).forEach(function (item) {
-                item.addEventListener('click', function () {
-                    const index = Array.from(checked).indexOf(item);
-                    semana[index].classList.toggle('hidden');
-                })
-            });
-        }
-    } else {
-        function plegarCursos() {
-            tarjetasCursos.classList.toggle('hidden');
-        }
+    });
+    Array.from(unchecked).forEach(function (item) {
+        item.addEventListener('click', function () {
+            const index = Array.from(unchecked).indexOf(item);
+            hecho[index].classList.remove('hidden');
+            noHecho[index].classList.add('hidden');
+            unchecked[index].classList.add('hidden');
+            checked[index].classList.remove('hidden');
+        })
+    })
+    
+} else {
 
-        plegableCursos.addEventListener('click', plegarCursos);
-    }}
+    console.log(despCalendario, semana)
+
+    function plegarCursos() {
+        tarjetasCursos.classList.toggle('hidden');
+    }
+    Array.from(despCalendario).forEach(function (item) {
+        item.addEventListener('click', function () {
+            const index = Array.from(despCalendario).indexOf(item);
+            semana[index].classList.toggle('hidden');
+            console.log("click")
+        })
+    });
+    plegableCursos.addEventListener('click', plegarCursos);
+}

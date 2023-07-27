@@ -39,14 +39,15 @@
     <h2>Calendario</h2>
     <div class="calendario">
         <h3>Semana 1 <i class="fa-solid fa-chevron-down despcalendario"></i></h3>
-            <div class= "programa"></div>
+            <div class="programa"> <img src="{{ asset('media/week_4.png') }}" ></div>
         <h3>Semana 2 <i class="fa-solid fa-chevron-down despcalendario"></i></h3>
-        <div class= "programa"></div>
+            <div class="programa"> <img src="{{ asset('media/week_4.png') }}" ></div>
             <h3>Semana 3 <i class="fa-solid fa-chevron-down despcalendario"></i></h3>
-            <div></div>
+                <div class="programa"> <img src="{{ asset('media/week_4.png') }}" ></div>
                 <h3>Semana 4 <i class="fa-solid fa-chevron-down despcalendario"></i></h3>
-            <div class= "programa"></div>
-
+                <div class="programa"> <img src="{{ asset('media/week_4.png') }}" ></div>
+                <h3>Semana 5 <i class="fa-solid fa-chevron-down despcalendario"></i></h3>
+                <div class="programa"> <img src="{{ asset('media/week_5.png') }}" ></div>
     </div>
 </div>
 <script src="{{asset('js/dom-views.js')}}"></script>
