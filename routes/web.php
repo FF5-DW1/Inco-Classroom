@@ -36,6 +36,16 @@ Route::group(['middleware' => ['guest']], function () {
     });
 });
 
+// Perfil de usuario
+Route::get('/profile', function () {
+    return view('perfil');
+});
+
+// Cambiar contraseña
+Route::get('/new-password', function () {
+    return view('password');
+});
+
 // Ruta de inicio después del login
 Route::get('/home', [CompetenciaController::class, 'index'])->name('home');
 

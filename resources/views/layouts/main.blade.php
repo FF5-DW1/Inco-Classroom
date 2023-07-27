@@ -12,7 +12,9 @@
         <div class='headerContainer'>
             <a href="/"><x-logo /></a>
             <div class='derecha'>
-                <a class='link' href="/nosotros">Nosotros</a>
+                <i class="fa-solid fa-bars"></i>
+                <div class="menu">
+                    <a class='link' href="/nosotros">Nosotros</a>
                 <a class='link' href="/faq">FAQ</a>
                 @auth
                 <x-user />
@@ -23,11 +25,12 @@
                 @endguest
                 @auth
                 <div class="user-panel hidden">
-                    <p>Perfil</p>
-                    <p>Cambiar contraseña</p>
+                    <a href="/profile">Perfil</a>
+                    <a href="/new-password">Cambiar contraseña</a>
                     <x-logout />
                 </div>
                 @endauth
+                </div>
             </div>
         </div>
     </header>
@@ -52,9 +55,7 @@
             </div>
 
     </footer>
-    @auth
     <script src="{{asset('js/dom-layout.js')}}"></script>
-    @endauth
 </body>
 
 </html>

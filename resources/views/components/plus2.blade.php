@@ -1,10 +1,12 @@
 <div class="curso card2">
     <div class="plus">
-      <x-plus-icon />
+      <a href="" class="plus-link">
+        <x-plus-icon />
+      </a>
     </div>
     <div class="descripcion">
         <div>
-            <p class="gris">Descripción</p>
+            <p class="azul">Descripción</p>
             <p>Descripción de nuevo curso</p>
         </div>
       <x-crear />
