@@ -12,62 +12,113 @@ use Illuminate\Support\Str;
 class CursoController extends Controller
 {
 
-    public function create()
+    public function create ($slug)
     {
-        return view('create.cursoNew');
-    }
+        $competencia = Competencia::where('slug', $slug)->first();
 
-    public function store(Request $request)
-{
-    // Validate data
-    $validated = $request->validate([
-        'title' => 'required',
-        'description' => 'required',
-        'duration' => 'required',
-        'cursera_url' => 'nullable|url',
-        'presentaciones_url' => 'nullable|url',
-        'grabaciones_url' => 'nullable|url',
-    ]);
-
-    // Generate the slug from the title
-    $slug = Str::slug($request->title, '-');
-
-    // Check if the generated slug already exists in the database
-    $exists = Curso::where('slug', $slug)->exists();
-
-    // If the slug exists, append a unique number to the end of the slug
-    if ($exists) {
-        $count = 1;
-        while (Curso::where('slug', "{$slug}-{$count}")->exists()) {
-            $count++;
+        if (is_null($competencia)) {
+            return abort(404); 
         }
-        $slug = "{$slug}-{$count}";
+        return view('create.cursoNew', [
+            "competencia" => $competencia,
+        ]);
     }
 
-    // Add the 'slug' field to the validated data
-    $validated['slug'] = $slug;
+//     public function store(Request $request)
+// {
+//     // Validate data
+//     $validated = $request->validate([
+//         'title' => 'required',
+//         'description' => 'required',
+//         'duration' => 'required',
+//         'cursera_url' => 'nullable|url',
+//         'presentaciones_url' => 'nullable|url',
+//         'grabaciones_url' => 'nullable|url',
+//     ]);
 
-    // Get the logged-in user's competencia
-    $competencia = Auth::user()->competencia;
+//     // Generate the slug from the title
+//     $slug = Str::slug($request->title, '-');
 
-    // Save the data and associate it with the competencia
-    $curso = $competencia->cursos()->create($validated);
+//     // Check if the generated slug already exists in the database
+//     $exists = Curso::where('slug', $slug)->exists();
 
-    // Redirect to the curso.show route with the generated slug
-    return redirect()->route('curso.show', ['slug' => $slug]);
-}
+//     // If the slug exists, add unique number to the end of the slug
+//     if ($exists) {
+//         $count = 1;
+//         while (Curso::where('slug', "{$slug}-{$count}")->exists()) {
+//             $count++;
+//         }
+//         $slug = "{$slug}-{$count}";
+//     }
+
+//     // Add the 'slug' field to the validated data
+//     $validated['slug'] = $slug;
+
+//     // Get the logged-in user's competencia
+//     $competencia = auth()->user()->competencia;
+
+//     // Save the data and associate it with the competencia
+//     $curso = $competencia->cursos()->create($validated);
+
+//     // Redirect to the curso.show route with the generated slug
+//     // return redirect()->route('curso.show', ['slug' => $slug], 'competencia', compact('competencia'));
+//     return redirect()->route('curso.show', ['slug' => $slug, 'competencia' => $competencia]);
+
+// }
+
+
+//     public function store(Request $request)
+// {
+//     // Validate data
+//     $validated = $request->validate([
+//         'title' => 'required',
+//         'description' => 'required',
+//         'duration' => 'required',
+//         'cursera_url' => 'nullable|url',
+//         'presentaciones_url' => 'nullable|url',
+//         'grabaciones_url' => 'nullable|url',
+//     ]);
+
+//     // Generate the slug from the title
+//     $slug = Str::slug($request->title, '-');
+
+//     // Check if the generated slug already exists in the database
+//     $exists = Curso::where('slug', $slug)->exists();
+
+//     // If the slug exists, append a unique number to the end of the slug
+//     if ($exists) {
+//         $count = 1;
+//         while (Curso::where('slug', "{$slug}-{$count}")->exists()) {
+//             $count++;
+//         }
+//         $slug = "{$slug}-{$count}";
+//     }
+
+//     // Add the 'slug' field to the validated data
+//     $validated['slug'] = $slug;
+
+//     // Get the logged-in user's competencia
+//     $competencia = Auth::user()->competencia->first();
+
+//     // dd($competencia);
+//     // Save the data and associate it with the competencia
+//     $curso = $competencia->cursos()->create($validated);
+
+//     // Redirect to the curso.show route with the generated slug
+//     return redirect()->route('curso.show', ['slug' => $slug]);
+// }
 
     
-    public function edit($id)
+    public function edit($slug)
     {
-        // Find the specific Curso by its id
-        $curso = Curso::findOrFail($id);
+        // Find the specific Curso by its slug
+        $curso = Curso::findOrFail($slug);
     
         // Pass the $curso variable to the view
         return view('create.cursoEdit', compact('curso'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
         // Validate data
         $validated = $request->validate([
@@ -80,7 +131,7 @@ class CursoController extends Controller
         ]);
 
         // Find the specific Competencia by ID
-        $curso = Curso::findOrFail($id);
+        $curso = Curso::findOrFail($slug);
 
             // Update the data
             $curso->update($validated);
@@ -100,35 +151,19 @@ class CursoController extends Controller
     
             return back()->with("success", "Curso deleted successfully.");
         }
-    
-
-        // public function show($slug, Curso $curso)
-        // {
-        //     $curso = Curso::where('slug', $slug)->first();
-        
-        //     if (!$curso) {
-        //         return abort(404);
-        //     }
-        
-        //     // dd($modulo); // Debugging output
-        
-        //     return view('course', [
-        //         "curso" => $curso,
-        //     ]);
-        // }
 
         public function show($slug)
-{
-    $curso = Curso::where('slug', $slug)->first();
+        {
+            $curso = Curso::where('slug', $slug)->first();
 
-    if (!$curso) {
-        return abort(404);
-    }
+            if (!$curso) {
+                return abort(404);
+            }
 
-    // Eager load the modulos related to the curso
-    $curso->load('modulos');
+            // load the modulos related to the curso
+            $curso->load('modulos');
 
-    // Pass the $curso variable to the view
-    return view('course', compact('curso'));
-}
-}
+            // Pass $curso to the view
+            return view('course', compact('curso'));
+        }
+        }

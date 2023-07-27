@@ -14,9 +14,15 @@ class Competencia extends Model
         'slug', 
         'description',
         'image_url',
+        'user_id',
         'presentaciones_url',
         'grabaciones_url',
     ];
+
+    public function id()
+    {
+        return $this->competencia_id;
+    }
 
     public function cursos()
     {

@@ -100,8 +100,8 @@ Route::get('/admin/nuevo-curso', function () {
 
 //Actions with competencias
 //create
-Route::get('/home/create', [CompetenciaController::class, 'create'])->name('home.create');
-Route::post('/home', [CompetenciaController::class, 'store']);
+Route::get('/competencia/create', [CompetenciaController::class, 'create'])->name('competencia.create');
+Route::post('/competencia/store', [CompetenciaController::class, 'store'])->name('competencia.store');
 //edit
 Route::get('/home/{id}/edit', [CompetenciaController::class, 'edit'])->name('home.edit');
 Route::put('/home/{id}', [CompetenciaController::class, 'update']);
@@ -109,15 +109,15 @@ Route::put('/home/{id}', [CompetenciaController::class, 'update']);
 Route::delete('/home/{id}', [CompetenciaController::class, 'destroy']);
 //show
 // Route::get('/home/{id}', [CompetenciaController::class, 'show'])->name('competencia.show');
-Route::get('{slug}', [CompetenciaController::class, 'show'])->name('competencia.show');
+Route::get('competencia/{slug}', [CompetenciaController::class, 'show'])->name('competencia.show');
 
 //Actions with courses
 // create
-Route::get('/cursos/create', [CursoController::class, 'create'])->name('curso.create');
-Route::post('/cursos', [CursoController::class, 'store'])->name('curso.store');
+Route::get('competencia/{slug}/create', [CursoController::class, 'create'])->name('curso.create');
+Route::post('competencia/{slug}', [CursoController::class, 'store'])->name('curso.store');
 //edit
-Route::get('/cursos/{id}/edit', [CursoController::class, 'edit'])->name('curso.edit');
-Route::put('/cursos/{id}', [CursoController::class, 'update'])->name('curso.update');
+Route::get('competencia/{slug}/edit', [CursoController::class, 'edit'])->name('curso.edit');
+Route::put('competencia/{slug}', [CursoController::class, 'update'])->name('curso.update');
 //delete 
 Route::delete('/cursos/{id}', [CursoController::class, 'destroy'])->name('curso.destroy');
 //show modules of the curso

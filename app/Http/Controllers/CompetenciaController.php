@@ -40,6 +40,12 @@ class CompetenciaController extends Controller
 
     public function store(Request $request)
     {
+        // Validate data
+        $validated = $request->validate([
+            'title' => 'required',
+            'presentaciones_url' => 'nullable|url',
+            'grabaciones_url' => 'nullable|url',
+        ]);
 
     $slug = Str::slug($request->title, '-');
     // if already exists
@@ -48,28 +54,26 @@ class CompetenciaController extends Controller
         return redirect()->route('home')->withErrors(['title' => 'Ese titulo ya existe']);
     }
 
-    // Validate data
-    $validated = $request->validate([
-        'title' => 'required',
-        'image_url' => 'nullable|url',
-    ]);
 
     // Get the ID of the authenticated user
     $userId = Auth::id();
 
-    // dd($userId);
+    // dump($userId);
 
     // Save the data and associate it with the authenticated user
     $competencia = new Competencia([
         'title' => $request->title,
         'slug' => $slug,
         'user_id' => $userId, 
+        'presentaciones_url' => $request->presentaciones_url,
+        'grabaciones_url' => $request->grabaciones_url,
     ]);
     
+
     $competencia->save();
 
     // Return view in case of success
-    return redirect("/home");
+    return redirect()->route('competencia.show', [$slug]) ;
     }
 
     public function edit($id)
@@ -83,10 +87,13 @@ class CompetenciaController extends Controller
     
     public function update(Request $request, $id)
     {
+        // dd($request->all()); 
         // Validate data
         $validated = $request->validate([
             'title' => 'required',
-            'image_url' => 'nullable|url',
+            // 'image_url' => 'nullable|url',
+            'presentaciones_url' => 'nullable|url',
+            'grabaciones_url' => 'nullable|url',
         ]);
 
         // Find the specific Competencia by ID
@@ -108,33 +115,33 @@ class CompetenciaController extends Controller
             return redirect('/home')->with("competencias", $competencia);
         }
 
-            public function show($slug, Competencia $competencia)
-        {
-            $competencia = Competencia::with('cursos')->where('slug', $slug)->first();
-
-            if (!$competencia) {
-                return abort(404);
-            }
-
-            return view('courses', [
-                "competencia" => $competencia,
-            ]);
-        }
-
-
-        // public function show($slug, Competencia $competencia)
+        //     public function show($slug, Competencia $competencia)
         // {
-        //     $competencia = Competencia::where('slug', $slug)->first();
-        
+        //     $competencia = Competencia::with('cursos')->where('slug', $slug)->first();
+
         //     if (!$competencia) {
         //         return abort(404);
         //     }
-        
-        //     // dd($curso); // Debugging output
-        
+
         //     return view('courses', [
         //         "competencia" => $competencia,
         //     ]);
         // }
+
+
+        public function show($slug, Competencia $competencia)
+        {
+            $competencia = Competencia::where('slug', $slug)->first();
+        
+            if (!$competencia) {
+                return abort(404);
+            }
+        
+            // dd($curso); // Debugging output
+        
+            return view('courses', [
+                "competencia" => $competencia,
+            ]);
+        }
         
 }

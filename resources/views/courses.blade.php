@@ -6,9 +6,9 @@
     <h1>{{ $competencia->title }} <i class="fa-solid fa-chevron-down plegableCursos"></i></h1>
     <div class="contents">
             <x-curso :cursos="$competencia->cursos" :competencia="$competencia" />
-        <a href="{{ route('curso.create') }}">
-            <x-plus2 />
-        </a>
+            <a href="{{ route('curso.create', ['slug' => $competencia->slug]) }}">
+                <x-plus2 />
+            </a>
     </div>
     <h2>Progreso</h2>
     <div class="progreso"></div>

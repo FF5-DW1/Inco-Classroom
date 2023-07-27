@@ -3,7 +3,7 @@
 @section('title', 'Editar Curso')
 
 @section('content')
-<form method="POST" action="{{ route('curso.update', $curso->id) }}" class="cursoForm">
+<form method="POST" action="/competencia/{{ $competencia->slug }}" class="cursoForm">
     @csrf
     @method('PUT')
     <h2>Editar Curso</h2>
@@ -17,7 +17,7 @@
     </div>
     <div>
         <label for="cursera_url">Cursera URL:</label>
-        <input type="text" id="cursera_url" name="cursera_url" placeholder="Enter image URL" value="{{ $curso->cursera_url }}">
+        <input type="text" id="cursera_url" name="cursera_url" value="{{ $curso->cursera_url }}">
     </div>
     <div>
         <!-- <label for="presentacion_url">Presentacion URL:</label>
