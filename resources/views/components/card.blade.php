@@ -11,12 +11,13 @@
             <div class="iconos">
                     <!-- <i class="fa-solid fa-circle-notch" style="font-size: 30px"></i>
                 <span>60%</span> -->
-                
+                <div>
                 <i class="fa-solid fa-person-chalkboard"></i>
                 <!-- <i class="fa-solid fa-video"></i> -->
                 <i class="fa-solid fa-film"></i>
                 <!-- <img src="{{asset('media/cropped-android-chrome-512x512-1.png')}}" alt=""> -->
-                
+                </div>
+                <div>
                 <!-- buttons -->
                 <a href="/home/{{ $competencia->id }}/edit">
                     <x-editar :competencia="$competencia" />
@@ -29,6 +30,7 @@
                     @method("DELETE")
                         <x-eliminar :competencia="$competencia" />
                 </form>
+            </div>
                 </div>
             </div>
         </div>
