@@ -1,4 +1,4 @@
-let plegableUser = document.querySelector('.plegableUser');
+let plegableUser = document.querySelector('.user');
 let panelUser = document.querySelector('.user-panel');
 const hamburger = document.querySelector('.fa-bars');
 const menu = document.querySelector('.menu');

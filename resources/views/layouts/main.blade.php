@@ -25,8 +25,8 @@
                 @endguest
                 @auth
                 <div class="user-panel hidden">
-                    <p>Perfil</p>
-                    <p>Cambiar contraseña</p>
+                    <a href="/profile">Perfil</a>
+                    <a href="/new-password">Cambiar contraseña</a>
                     <x-logout />
                 </div>
                 @endauth

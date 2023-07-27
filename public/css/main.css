@@ -145,6 +145,10 @@ button:hover {
   cursor: pointer;
 }
 
+br {
+  margin: .5em 0;
+}
+
 /* HEADER */
 
 .headerContainer{
@@ -168,6 +172,11 @@ button:hover {
     
 }
 
+.headerContainer a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
 .headerContainer .logo {
   width: 6em;
 }
@@ -175,6 +184,11 @@ button:hover {
 .derecha .signInButton {
   background-color: white;
   color: var(--color-base);
+}
+
+.user:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .user-panel {
@@ -191,8 +205,9 @@ button:hover {
   box-shadow: .3em .3em .5em rgba(0,0,0,0.5);
 }
 
-.user-panel p {
+.user-panel a {
   margin-bottom: 1em;
+  display: block;
 }
 
 #logout-form {
@@ -706,6 +721,20 @@ button:hover {
   .adminCard a {
     color: black;
     text-decoration: none;
+  }
+
+  /* PERFIL Y CAMBIAR CONTRASEÑA */
+  .perfilForm, .passwordForm {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 30%;
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+
+  .perfilForm > div, .passwordForm > div {
+    margin: .5em auto;
   }
 
   /* Estilos generales que aplican a todos los dispositivos */
