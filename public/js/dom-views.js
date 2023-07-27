@@ -27,26 +27,25 @@ if (plegableCursos == null || tarjetasCursos == null) {
             plegarFaq[index].classList.remove('hidden');
         })
     });
-    if (desplegarFaq == null || plegarFaq == null || preguntas == null) {
-        Array.from(checked).forEach(function (item) {
-            item.addEventListener('click', function () {
-                const index = Array.from(checked).indexOf(item);
-                hecho[index].classList.add('hidden');
-                noHecho[index].classList.remove('hidden');
-                unchecked[index].classList.remove('hidden');
-                checked[index].classList.add('hidden');
-            })
-        });
-        Array.from(unchecked).forEach(function (item) {
-            item.addEventListener('click', function () {
-                const index = Array.from(unchecked).indexOf(item);
-                hecho[index].classList.remove('hidden');
-                noHecho[index].classList.add('hidden');
-                unchecked[index].classList.add('hidden');
-                checked[index].classList.remove('hidden');
-            })
+    Array.from(checked).forEach(function (item) {
+        item.addEventListener('click', function () {
+            const index = Array.from(checked).indexOf(item);
+            hecho[index].classList.add('hidden');
+            noHecho[index].classList.remove('hidden');
+            unchecked[index].classList.remove('hidden');
+            checked[index].classList.add('hidden');
+            alert('clicado')
         })
-    }
+    });
+    Array.from(unchecked).forEach(function (item) {
+        item.addEventListener('click', function () {
+            const index = Array.from(unchecked).indexOf(item);
+            hecho[index].classList.remove('hidden');
+            noHecho[index].classList.add('hidden');
+            unchecked[index].classList.add('hidden');
+            checked[index].classList.remove('hidden');
+        })
+    })
 } else {
     function plegarCursos() {
         tarjetasCursos.classList.toggle('hidden');

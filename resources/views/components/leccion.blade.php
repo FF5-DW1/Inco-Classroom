@@ -26,8 +26,8 @@
       <span class="azul hecho">Hecho</span>
       <span class="azul hidden no-hecho">Marcar como hecho</span>
       <span>
-        <i class="fa-solid fa-square-check"></i>
-        <i class="fa-regular fa-square-check hidden"></i>
+        <i class="fa-solid fa-square-check checked"></i>
+        <i class="fa-regular fa-square-check unchecked hidden"></i>
       </span>
     </div>
   </div>
