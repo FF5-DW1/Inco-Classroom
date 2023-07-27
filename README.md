@@ -49,3 +49,13 @@ En Inco-Classroom, nuestra forma de trabajar se basa en una metodología ágil y
 ## Licencia
 
 Inco-Classroom es software de código abierto con licencia MIT.
+
+---
+
+**Equipo de Desarrollo:**
+
+- <span style="color: green; font-weight: bold;">Beatryss Rats</span>
+- <span style="color: red; font-weight: bold;">Andrés Abadi</span>
+- <span style="color: orange; font-weight: bold;">Olga García</span>
+- <span style="color: greenyellow; font-weight: bold;">Anthony Salazar</span>
+- <span style="color: aqua; font-weight: bold;">Silvio Aguilar</span>
