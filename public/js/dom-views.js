@@ -46,11 +46,11 @@ if (plegableCursos == null || tarjetasCursos == null) {
                 checked[index].classList.remove('hidden');
             })
         })
-    } else {
-        function plegarCursos() {
-            tarjetasCursos.classList.toggle('hidden');
-        }
-
-        plegableCursos.addEventListener('click', plegarCursos);
     }
+} else {
+    function plegarCursos() {
+        tarjetasCursos.classList.toggle('hidden');
+    }
+
+    plegableCursos.addEventListener('click', plegarCursos);
 }
