@@ -6,7 +6,7 @@
     </div>
     <div class="descripcion">
         <div>
-            <p class="azul">Descripción</p>
+            <p class="azul">Nuevo modulo</p>
             <p>Descripción de nuevo módulo</p>
         </div>
       <x-crear />
