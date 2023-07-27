@@ -5,6 +5,11 @@ const desplegarFaq = document.querySelectorAll('.desplegarFaq');
 const plegarFaq = document.querySelectorAll('.plegarFaq');
 const preguntas = document.querySelectorAll('.respuesta');
 
+
+const desplegarweek = document.querySelectorAll('.desplegarweek');
+const plegarweek = document.querySelectorAll('.plegarweek');
+const calendario = document.querySelectorAll('.calendario');
+
 if (plegableCursos == null || tarjetasCursos == null) {
     Array.from(plegarFaq).forEach(function (item) {
         item.addEventListener('click', function () {
@@ -29,3 +34,4 @@ if (plegableCursos == null || tarjetasCursos == null) {
 
     plegableCursos.addEventListener('click', plegarCursos);
 }
+
