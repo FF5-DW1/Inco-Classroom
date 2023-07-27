@@ -14,7 +14,7 @@ const despCalendario = document.querySelectorAll('.despcalendario');
 const semana = document.querySelectorAll('.programa');
 
 if (plegableCursos == null || tarjetasCursos == null) {
-   Array.from(plegarFaq).forEach(function (item) {
+    Array.from(plegarFaq).forEach(function (item) {
         item.addEventListener('click', function () {
             const index = Array.from(plegarFaq).indexOf(item);
             preguntas[index].classList.add('hidden');
@@ -49,7 +49,7 @@ if (plegableCursos == null || tarjetasCursos == null) {
             checked[index].classList.remove('hidden');
         })
     })
-    
+
 } else {
 
     console.log(despCalendario, semana)
