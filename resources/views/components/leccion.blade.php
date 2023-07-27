@@ -22,13 +22,14 @@
           <x-eliminar :modulo="$modulo" />
       </form>
     </div>
-    <div class="hecho">
-      <span class="azul">Hecho</span>
-      <span class="azul hidden">Marcar como hecho</span>
+    <div class="checkmark">
+      <span class="azul hecho">Hecho</span>
+      <span class="azul hidden no-hecho">Marcar como hecho</span>
       <span>
         <i class="fa-solid fa-square-check"></i>
         <i class="fa-regular fa-square-check hidden"></i>
-      </span></div>
+      </span>
+    </div>
   </div>
 </div>
 @endforeach

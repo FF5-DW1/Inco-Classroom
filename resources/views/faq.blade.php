@@ -73,7 +73,9 @@
         <p class="respuesta hidden">Después de verificar, mi nombre está mal escrito en el certificado Esto sucede a veces. Puedes ponerte en contacto con el servicio de asistencia de Coursera y te lo arreglarán.</p>
     </div>
     <div class="nuevofaq">
-        <x-plus-icon/>
+        <a href="" class="plus-link">
+            <x-plus-icon/>
+        </a>
     </div>
 </div>
 <script src="{{asset('js/dom-views.js')}}"></script>

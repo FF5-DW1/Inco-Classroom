@@ -27,5 +27,6 @@
     <x-plus3 />
   </div>
 </div>
+<script src="{{asset('js/dom-views.js')}}"></script>
 
 @endsection

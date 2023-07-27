@@ -475,7 +475,7 @@ br {
     width: 30%;
   }
 
-  .hecho {
+  .checkmark {
     text-align: right;
     align-self: flex-end;
     display: flex;
@@ -484,11 +484,11 @@ br {
     margin-bottom: 1em;
   }
 
-  .hecho span {
+  .checkmark span {
     padding: 2px;
   }
 
-  .hecho i {
+  .checkmark i {
     font-size: 24px;
     color: var(--color-base);
   }
