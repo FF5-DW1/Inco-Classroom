@@ -12,23 +12,25 @@
     </div>
 
     <!-- buttons -->
-    <div>
-      <a href="{{ route('modulo.edit', $modulo->id) }}">
-          <x-editar :modulo="$modulo" />
-      </a>
-      <form action="{{ route('modulo.destroy', $modulo->id) }}" method="POST">
-      @csrf
-      @method("DELETE")
-          <x-eliminar :modulo="$modulo" />
-      </form>
-    </div>
-    <div class="checkmark">
-      <span class="azul hecho">Hecho</span>
-      <span class="azul hidden no-hecho">Marcar como hecho</span>
-      <span>
-        <i class="fa-solid fa-square-check checked"></i>
-        <i class="fa-regular fa-square-check unchecked hidden"></i>
-      </span>
+    <div class="botones">
+      <div class="editar">
+        <a href="{{ route('modulo.edit', $modulo->id) }}">
+            <x-editar :modulo="$modulo" />
+        </a>
+        <form action="{{ route('modulo.destroy', $modulo->id) }}" method="POST">
+        @csrf
+        @method("DELETE")
+            <x-eliminar :modulo="$modulo" />
+        </form>
+      </div>
+      <div class="checkmark">
+        <span class="azul hecho">Hecho</span>
+        <span class="azul hidden no-hecho">Marcar como hecho</span>
+        <span>
+          <i class="fa-solid fa-square-check checked"></i>
+          <i class="fa-regular fa-square-check unchecked hidden"></i>
+        </span>
+      </div>
     </div>
   </div>
 </div>

@@ -469,14 +469,31 @@ br {
     display: flex;
   }
 
-  .leccion * {
-    padding: 0.2em 1em;
+  .leccion > div {
+    padding: 2em;
   }
 
   .leccion .titulo {
     background-color: var(--color-base);
     color: white;
     width: 30%;
+  }
+
+  .botones {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .editar {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    justify-content: flex-start;
+    gap: 1em;
+  }
+
+  .editar a, .editar form {
+    margin: 1em 0;
   }
 
   .checkmark {

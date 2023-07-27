@@ -37,7 +37,6 @@ if (plegableCursos == null || tarjetasCursos == null) {
             noHecho[index].classList.remove('hidden');
             unchecked[index].classList.remove('hidden');
             checked[index].classList.add('hidden');
-            alert('clicado')
         })
     });
     Array.from(unchecked).forEach(function (item) {
@@ -51,9 +50,6 @@ if (plegableCursos == null || tarjetasCursos == null) {
     })
 
 } else {
-
-    console.log(despCalendario, semana)
-
     function plegarCursos() {
         tarjetasCursos.classList.toggle('hidden');
     }
