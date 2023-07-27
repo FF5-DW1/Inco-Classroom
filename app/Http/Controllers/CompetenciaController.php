@@ -51,7 +51,7 @@ class CompetenciaController extends Controller
     // if already exists
     $exists = Competencia::where('slug', $slug)->first();
     if ($exists) {
-        return redirect()->route('home')->withErrors(['title' => 'Ese titulo ya existe']);
+        return redirect()->route('home.competencia')->withErrors(['title' => 'Ese titulo ya existe']);
     }
 
 

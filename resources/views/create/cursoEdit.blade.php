@@ -3,7 +3,7 @@
 @section('title', 'Editar Curso')
 
 @section('content')
-<form method="POST" action="/competencia/{{ $competencia->slug }}" class="cursoForm">
+<form method="POST" action="{{ route('curso.update', $curso->id) }}" class="cursoForm">
     @csrf
     @method('PUT')
     <h2>Editar Curso</h2>

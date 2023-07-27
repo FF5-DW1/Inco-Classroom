@@ -1,2 +1,1 @@
-
-    <button class="botonBlanco ver">CREAR</button>
+<button class="botonBlanco ver">CREAR</button>

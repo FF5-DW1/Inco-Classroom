@@ -20,6 +20,7 @@ use App\Http\Controllers\ModuloController;
 |
 */
 
+
 Route::get('/test-connection', [TestDatabaseController::class, 'testConnection']); //testing connection with to database
 
 // Ruta de inicio
@@ -103,21 +104,20 @@ Route::get('/admin/nuevo-curso', function () {
 Route::get('/competencia/create', [CompetenciaController::class, 'create'])->name('competencia.create');
 Route::post('/competencia/store', [CompetenciaController::class, 'store'])->name('competencia.store');
 //edit
-Route::get('/home/{id}/edit', [CompetenciaController::class, 'edit'])->name('home.edit');
-Route::put('/home/{id}', [CompetenciaController::class, 'update']);
+Route::get('/home/{slug}/edit', [CompetenciaController::class, 'edit'])->name('home.edit');
+Route::put('/home/{slug}', [CompetenciaController::class, 'update']);
 //delete 
 Route::delete('/home/{id}', [CompetenciaController::class, 'destroy']);
-//show
-// Route::get('/home/{id}', [CompetenciaController::class, 'show'])->name('competencia.show');
+//show the courses of the competence 
 Route::get('competencia/{slug}', [CompetenciaController::class, 'show'])->name('competencia.show');
 
 //Actions with courses
 // create
 Route::get('competencia/{slug}/create', [CursoController::class, 'create'])->name('curso.create');
-Route::post('competencia/{slug}', [CursoController::class, 'store'])->name('curso.store');
+Route::post('competencia/{slug}/store', [CursoController::class, 'store'])->name('curso.store');
 //edit
 Route::get('competencia/{slug}/edit', [CursoController::class, 'edit'])->name('curso.edit');
-Route::put('competencia/{slug}', [CursoController::class, 'update'])->name('curso.update');
+Route::put('competencia/{slug}/update', [CursoController::class, 'update'])->name('curso.update');
 //delete 
 Route::delete('/cursos/{id}', [CursoController::class, 'destroy'])->name('curso.destroy');
 //show modules of the curso
@@ -125,11 +125,11 @@ Route::get('/cursos/{slug}', [CursoController::class, 'show'])->name('curso.show
 
 //Actions with modulos
 // create
-Route::get('/modulos/create', [ModuloController::class, 'create'])->name('modulo.create');
-Route::post('/modulos', [ModuloController::class, 'store']);
+Route::get('cursos/{slug}/create', [ModuloController::class, 'create'])->name('modulo.create');
+Route::post('cursos/{slug}/store', [ModuloController::class, 'store'])->name('modulo.store');
 //edit
-Route::get('/modulos/{id}/edit', [ModuloController::class, 'edit'])->name('modulo.edit');
-Route::put('/modulos/{slug}', [ModuloController::class, 'update'])->name('modulo.update');;
+Route::get('cursos/{slug}/edit', [ModuloController::class, 'edit'])->name('modulo.edit');
+Route::put('cursos/{slug}/update', [ModuloController::class, 'update'])->name('modulo.update');;
 //delete 
 Route::delete('/modulos/{id}', [ModuloController::class, 'destroy'])->name('modulo.destroy');
 
