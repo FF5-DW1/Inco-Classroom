@@ -10,48 +10,61 @@ use Illuminate\Support\Str;
 
 class ModuloController extends Controller
 {
-    public function create()
+    public function create($slug)
     {
-        return view('create.moduloNew');
-    }
+        $curso = Curso::where('slug', $slug)->first();
 
-    public function store(Request $request)
-    {
-        $slug = Str::slug($request->title, '-'); 
-
-        $exists = Modulo::where('slug', $slug)->first(); 
-
-        if($exists){
-            return redirect()->route('course')->withErrors(['title' => 'Ese titulo ya existe']); 
+        if (is_null($curso)) {
+            return abort(404);
         }
-        // dd($slug); 
-
-        // validate data
-        $validated = $request->validate([
-            'title' => 'required',
-            'description' => 'required',
+        return view('create.moduloNew', [
+            "curso" => $curso,
         ]);
-
-        // Save the data
-        // Competencia::create($validated);
-        $modulo = Modulo::create([
-            'title' => $request ->title, 
-            'slug' => $slug, 
-        ]); 
-
-        // Return view in case of success
-        return redirect("/course");
     }
+
+    public function store(Request $request, $cursoSlug)
+{
+    // Validate data
+    $validated = $request->validate([
+        'title' => 'required',
+        'description' => 'required',
+        'duration' => 'required',
+    ]);
+
+    $moduloSlug = Str::slug($request->title, '-');
+
+    // Check if a modulo with the same title already exists
+    $exists = Modulo::where('title', $request->title)->first();
+
+    if ($exists) {
+        return redirect()->route('curso.show', ['slug' => $cursoSlug])->withErrors(['title' => 'Ese titulo ya existe']);
+    }
+
+    $validated['slug'] = $moduloSlug;
+
+    // Find the curso based on the slug
+    $curso = Curso::where('slug', $cursoSlug)->first();
+
+    // Check if the curso exists
+    if (!$curso) {
+        return abort(404);
+    }
+
+    // Save the data and associate it with the curso
+    $modulo = $curso->modulos()->create($validated);
+
+    return redirect()->route('curso.show', ['slug' => $cursoSlug]);
+}
 
     public function edit($id)
     {
         // Find the specific Competencia by its ID
         $modulo = Modulo::findOrFail($id);
-    
+
         // Pass the $competencia variable to the view
         return view('create.moduloEdit', compact('modulo'));
     }
-    
+
 
     public function update(Request $request, $id)
     {
@@ -64,21 +77,21 @@ class ModuloController extends Controller
         // Find the specific Competencia by ID
         $modulo = Modulo::findOrFail($id);
 
-            // Update the data
-            $modulo->update($validated);
+        // Update the data
+        $modulo->update($validated);
 
-            $curso = $modulo->curso; 
+        $curso = $modulo->curso;
 
-            // Redirect to the competencia.show route with the slug parameter
-            return redirect()->route('curso.show', ['slug' => $curso->slug]);
-        }
+        // Redirect to the competencia.show route with the slug parameter
+        return redirect()->route('curso.show', ['slug' => $curso->slug]);
+    }
 
-        public function destroy($id)
-        {
-            // Find the specific Competencia by its ID
-            $modulo = Modulo::findOrFail($id);
-            $modulo->delete(); 
-        
-            return back()->with("success", "Curso deleted successfully.");
-        }
+    public function destroy($id)
+    {
+        // Find the specific Competencia by its ID
+        $modulo = Modulo::findOrFail($id);
+        $modulo->delete();
+
+        return back()->with("success", "Curso deleted successfully.");
+    }
 }

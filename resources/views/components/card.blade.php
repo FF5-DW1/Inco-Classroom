@@ -5,16 +5,20 @@
         </a>
         <div>
             <div>
-                <p class="azul">Curso</p>
+                <p class="azul">Competencia</p>
                 <h4>{{ $competencia["title"] }}</h4>
             </div>
             <div class="iconos">
                     <!-- <i class="fa-solid fa-circle-notch" style="font-size: 30px"></i>
                 <span>60%</span> -->
                 <div>
-                <i class="fa-solid fa-person-chalkboard"></i>
+                <a href="{{ $competencia['presentaciones_url'] }}">
+                    <i class="fa-solid fa-person-chalkboard"></i>
+                </a>
                 <!-- <i class="fa-solid fa-video"></i> -->
-                <i class="fa-solid fa-film"></i>
+                <a href="{{ $competencia['grabaciones_url'] }}">
+                    <i class="fa-solid fa-film"></i>
+                </a>
                 <!-- <img src="{{asset('media/cropped-android-chrome-512x512-1.png')}}" alt=""> -->
                 </div>
                 <div>

@@ -28,7 +28,7 @@
           @endif
         <?php endif; ?>
 
-        <a href="{{ route('home.create') }}">
+        <a href="{{ route('competencia.create') }}">
           <x-plus />
         </a>
       </div>
