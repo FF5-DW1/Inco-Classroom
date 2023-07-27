@@ -20,10 +20,10 @@ Inco-Classroom es una plataforma web de cursos desarrollada para la empresa INCO
 
 ## Tecnologías Utilizadas
 
-- <img src="https://1000marcas.net/wp-content/uploads/2021/05/Docker-Logo-2.png" alt="Docker Logo" width="20"> Docker: Plataforma para desarrollar, implementar y ejecutar aplicaciones mediante contenedores, facilitando el despliegue y la portabilidad.
+- <img src="https://1000marcas.net/wp-content/uploads/2021/05/Docker-Logo-2.png" alt="Docker Logo" width="30"> Docker: Plataforma para desarrollar, implementar y ejecutar aplicaciones mediante contenedores, facilitando el despliegue y la portabilidad.
 - <img src="https://chuidiang.org/images/f/f3/Logo_php.png" alt="PHP Logo" width="20"> PHP: Lenguaje de programación de servidor utilizado para manejar la lógica del servidor y la comunicación con la base de datos.
 - <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Logo" width="20"> HTML: Lenguaje de marcado utilizado para crear la estructura de la página web.
-- <img src="https://www.adaweb.es/wp-content/uploads/2019/09/css-logo-adaweb.png" alt="CSS Logo" width="20"> CSS: Lenguaje de estilo utilizado para dar diseño y formato a la página web.
+- <img src="https://www.adaweb.es/wp-content/uploads/2019/09/css-logo-adaweb.png" alt="CSS Logo" width="40"> CSS: Lenguaje de estilo utilizado para dar diseño y formato a la página web.
 - <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JS Logo" width="20"> JS: Lenguaje de programación utilizado para agregar interactividad y dinamismo a la página web.
 
 ## Herramientas Utilizadas
