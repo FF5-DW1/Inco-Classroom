@@ -598,6 +598,12 @@ button:hover {
     font-size: 60px;
   }
 
+  .plus-link {
+    text-decoration: none;
+    align-self: center !important;
+    justify-self: center !important;
+  }
+
   /* AÑADIR COMPETENCIA */
 
   .competenciaForm {

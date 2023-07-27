@@ -1,6 +1,8 @@
 <div class="leccion card2">
     <div class="plus">
-      <x-plus-icon />
+      <a href="" class="plus-link">
+        <x-plus-icon />
+      </a>
     </div>
     <div class="descripcion">
         <div>
