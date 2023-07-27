@@ -35,7 +35,7 @@ Inco-Classroom es una plataforma web de cursos desarrollada para la empresa INCO
 
 ## Metodología de Trabajo
 
-En Inco-Classroom, nuestra forma de trabajar se basa en una metodología ágil y colaborativa propia de una startup:
+En Inco-Classroom, nuestra forma de trabajar se basa en una metodología ágil y colaborativa:
 
 - **Scrum y Sprints:** Organizamos el desarrollo en Sprints de corta duración, donde cada Sprint representa una iteración de trabajo.
 - **Reuniones Diarias:** Realizamos reuniones diarias para mantenernos informados y coordinar nuestras actividades.
