@@ -22,7 +22,7 @@ class CompetenciaFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'slug' => Str::slug($this->faker->unique()->sentence),
-            'image_url' => $this->faker->imageUrl(),
+            // 'image_url' => $this->faker->imageUrl(),
             'user_id' => User::where('teacher', true)->inRandomOrder()->first()->id,
             'created_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'updated_at' => $this->faker->dateTimeBetween('-1 year', 'now'),

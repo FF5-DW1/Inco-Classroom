@@ -8,20 +8,29 @@
   <div class="descripcion">
     <div>
       <p class="azul">Descripción</p>
-    <p>{{ $modulo["description"] }}</p>
+      <p>{{ $modulo["description"] }}</p>
     </div>
 
     <!-- buttons -->
     <div class="botones">
       <div class="editar">
-        <a href="{{ route('modulo.edit', $modulo->id) }}">
+        @auth
+        <?php if (auth()->user()->isTeacher()) : ?>
+          <a href="{{ route('modulo.edit', $modulo->id) }}">
             <x-editar :modulo="$modulo" />
-        </a>
-        <form action="{{ route('modulo.destroy', $modulo->id) }}" method="POST">
-        @csrf
-        @method("DELETE")
+          </a>
+        <?php endif; ?>
+        @endauth
+
+        @auth
+        <?php if (auth()->user()->isTeacher()) : ?>
+          <form action="{{ route('modulo.destroy', $modulo->id) }}" method="POST">
+            @csrf
+            @method("DELETE")
             <x-eliminar :modulo="$modulo" />
-        </form>
+          </form>
+        <?php endif; ?>
+        @endauth
       </div>
       <div class="checkmark">
         <span class="azul hecho">Hecho</span>

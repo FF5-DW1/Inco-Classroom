@@ -163,7 +163,10 @@ class CursoController extends Controller
         // load the modulos related to the curso
         $curso->load('modulos');
 
-        // Pass $curso to the view
-        return view('course', compact('curso'));
+        if (auth()->user()->can('view', $curso)) {
+            return view('course', compact('curso'));
+        } else {
+            abort(404);
+        }
     }
 }

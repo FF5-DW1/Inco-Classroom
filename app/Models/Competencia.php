@@ -15,6 +15,8 @@ class Competencia extends Model
         'description',
         'image_url',
         'user_id',
+        'zoom_url',
+        'zoom_url',
         'presentaciones_url',
         'grabaciones_url',
     ];

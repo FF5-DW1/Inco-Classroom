@@ -43,6 +43,8 @@ class CompetenciaController extends Controller
         // Validate data
         $validated = $request->validate([
             'title' => 'required',
+            'zoom_url' => 'nullable|url',
+            'slack_url' => 'nullable|url',
             'presentaciones_url' => 'nullable|url',
             'grabaciones_url' => 'nullable|url',
         ]);
@@ -51,7 +53,7 @@ class CompetenciaController extends Controller
     // if already exists
     $exists = Competencia::where('slug', $slug)->first();
     if ($exists) {
-        return redirect()->route('home.competencia')->withErrors(['title' => 'Ese titulo ya existe']);
+        return redirect()->route('home')->withErrors(['title' => 'Ese titulo ya existe']);
     }
 
 
@@ -65,6 +67,8 @@ class CompetenciaController extends Controller
         'title' => $request->title,
         'slug' => $slug,
         'user_id' => $userId, 
+        'zoom_url' => $request->zoom_url,
+        'slack_url' => $request->slack_url,
         'presentaciones_url' => $request->presentaciones_url,
         'grabaciones_url' => $request->grabaciones_url,
     ]);
@@ -92,8 +96,11 @@ class CompetenciaController extends Controller
         $validated = $request->validate([
             'title' => 'required',
             // 'image_url' => 'nullable|url',
+            'zoom_url' => 'nullable|url',
+            'slack_url' => 'nullable|url',
             'presentaciones_url' => 'nullable|url',
             'grabaciones_url' => 'nullable|url',
+
         ]);
 
         // Find the specific Competencia by ID
@@ -136,12 +143,15 @@ class CompetenciaController extends Controller
             if (!$competencia) {
                 return abort(404);
             }
-        
-            // dd($curso); // Debugging output
-        
-            return view('courses', [
-                "competencia" => $competencia,
-            ]);
+            
+            if (auth()->user()->can('view', $competencia)) {
+                return view('courses', [
+                    "competencia" => $competencia,
+                ]);
+            } else {
+                abort(404);
+            }
+
         }
         
 }

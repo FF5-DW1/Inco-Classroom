@@ -23,6 +23,20 @@
         @enderror
         </div> -->
         <div>
+        <label for="zoom_url">Zoom URL:</label>
+        <input type="text" id="zoom_url" name="zoom_url" value="{{ $competencia->zoom_url }}">
+        @error('zoom_url')
+        <div class="form-error">{{ $message }}</div>
+        @enderror
+    </div>
+    <div>
+        <label for="slack_url">Slack URL:</label>
+        <input type="text" id="slack_url" name="slack_url" value="{{ $competencia->zoom_url }}">
+        @error('slack_url')
+        <div class="form-error">{{ $message }}</div>
+        @enderror
+    </div>
+        <div>
         <label for="presentaciones_url">Presentaciones URL:</label>
         <input type="text" id="presentaciones_url" name="presentaciones_url" value="{{ $competencia->presentaciones_url }}">
         @error('presentaciones_url')

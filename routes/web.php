@@ -4,7 +4,7 @@ use App\Http\Controllers\TestDatabaseController; //testing connection with to da
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\CompetenciaController; 
+use App\Http\Controllers\CompetenciaController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ModuloController;
@@ -80,7 +80,7 @@ Route::get('/recursos', function () {
 // Route::get('/admin-panel', function () {
 //     return view('admin-panel');
 // })->name('admin-panel');
-Route::get('/admin-panel', function () { 
+Route::get('/admin-panel', function () {
     return view('admin-panel');
 })->middleware('auth', 'role:superadmin')->name('admin-panel');
 
@@ -119,7 +119,7 @@ Route::put('/home/{slug}', [CompetenciaController::class, 'update']);
 //delete 
 Route::delete('/home/{id}', [CompetenciaController::class, 'destroy']);
 //show the courses of the competence 
-Route::get('competencia/{slug}', [CompetenciaController::class, 'show'])->name('competencia.show');
+Route::get('competencia/{slug}', [CompetenciaController::class, 'show'])->name('competencia.show')->middleware('auth');
 
 //Actions with courses
 // create
@@ -143,11 +143,6 @@ Route::put('cursos/{slug}/update', [ModuloController::class, 'update'])->name('m
 //delete 
 Route::delete('/modulos/{id}', [ModuloController::class, 'destroy'])->name('modulo.destroy');
 
-// Contenido del curso
-// Route::get('/cursos/{id}', function () { 
-//     return view('course');
-// })->name('modulos');
-
 
 // Ruta de verificación de correo electrónico
 Route::get('/email/verify', [AuthController::class, 'showVerificationNotice'])
@@ -161,5 +156,3 @@ Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verify'])
 Route::post('/email/resend', [AuthController::class, 'resendVerification'])
     ->middleware(['auth', 'throttle:6,1'])
     ->name('verification.resend');
-
-

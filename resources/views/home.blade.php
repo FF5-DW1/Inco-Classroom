@@ -8,40 +8,45 @@
       <h2>Mis competencias</h2>
       <div class='grid'>
 
-      <?php if (!auth()->user()->isTeacher()) : ?>
-        @if (!empty($user->competencias))
+        <?php if (!auth()->user()->isTeacher()) : ?>
+          @if (!empty($user->competencias))
 
           <x-card :competencias="$user->competencias" />
-            
+
           @else
-            <p>No competencias found.//</p>
+          <p>No competencias found.//</p>
           @endif
-          
+
         <?php else : ?>
-        
+
           @if (!empty($userCompetencias))
 
           <x-card :competencias="$userCompetencias" />
-            
+
           @else
-            <p>No competencias found.</p>
+          <p>No competencias found.</p>
           @endif
         <?php endif; ?>
 
-        <a href="{{ route('competencia.create') }}">
-          <x-plus />
-        </a>
+        @auth
+        <?php if (auth()->user()->isTeacher()) : ?>
+          <a href="{{ route('competencia.create') }}">
+            <x-plus />
+          </a>
+        <?php endif; ?>
+        @endauth
+
       </div>
     </section>
     <section class='competencias'>
       <h2>Otros talleres</h2>
       <div class='grid'>
-              @if (!empty($competencias))
+        @if (!empty($competencias))
 
         <x-card :competencias="$competencias" />
-          
+
         @else
-          <p>No competencias found.</p>
+        <p>No competencias found.</p>
         @endif
       </div>
     </section>

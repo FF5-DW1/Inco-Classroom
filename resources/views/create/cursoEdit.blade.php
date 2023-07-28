@@ -17,6 +17,10 @@
             <input type="text" id="description" name="description" value="{{ $curso->description }}" required>
         </div>
         <div>
+            <label for="duration">Duracion:</label>
+            <input type="text" id="duration" name="duration" value="{{ $curso->duration }}" required>
+        </div>
+        <div>
             <label for="cursera_url">Cursera URL:</label>
             <input type="text" id="cursera_url" name="cursera_url" value="{{ $curso->cursera_url }}">
         </div>

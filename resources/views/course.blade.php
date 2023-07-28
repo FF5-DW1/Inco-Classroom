@@ -7,10 +7,13 @@
       <h2>{{ $curso->title }}</h2>
       <div class="lecciones">
         <x-leccion :modulos="$curso->modulos" :curso="$curso" />
-        <a href="{{ route('modulo.create', ['slug' => $curso->slug]) }}">
-                <x-plus3 />
-            </a>
-        </a>
+        @auth
+        <?php if (auth()->user()->isTeacher()) : ?>
+          <a href="{{ route('modulo.create', ['slug' => $curso->slug]) }}">
+            <x-plus3 />
+          </a>
+        <?php endif; ?>
+        @endauth
       </div>
 </div>
 <script src="{{asset('js/dom-views.js')}}"></script>

@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string("title"); 
             $table ->string('slug'); 
             $table->string("image_url")->nullable(); 
+            $table->string("zoom_url")->nullable(); 
+            $table->string("slack_url")->nullable(); 
             $table->string('presentaciones_url')->nullable();
             $table->string('grabaciones_url')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
