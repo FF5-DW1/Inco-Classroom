@@ -1,6 +1,8 @@
 <div class="card">
     <div class="plus">
+        <a href="" class="plus-link">
             <x-plus-icon />
+        </a>           
     </div>
     <div>
         <div>
