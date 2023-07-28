@@ -27,11 +27,11 @@ Inco-Classroom es una plataforma web de cursos desarrollada para la empresa INCO
 
 ## Herramientas Utilizadas
 
-- <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Trello-logo-blue.svg" alt="Trello Logo" width="20"> Trello: Plataforma para la gestión y organización de proyectos en equipo utilizando tableros y listas.
-- <img src="[https://cdn.worldvectorlogo.com/logos/figma-1.svg](https://cdn.worldvectorlogo.com/logos/figma-5.svg)" alt="Figma Logo" width="20"> Figma: Herramienta de diseño gráfico y prototipado para crear la interfaz de usuario de la plataforma.
-- <img src="[https://cdn.worldvectorlogo.com/logos/slack-1.svg](https://1000marcas.net/wp-content/uploads/2021/07/Slack-logo.png)" alt="Slack Logo" width="20"> Slack: Plataforma de comunicación para mantener la colaboración y la comunicación en tiempo real dentro del equipo.
-- <img src="https://cdn.worldvectorlogo.com/logos/zoom-3.svg" alt="Zoom Logo" width="20"> Zoom: Plataforma para realizar videoconferencias y reuniones virtuales con el equipo de desarrollo.
-- <img src="https://cdn.worldvectorlogo.com/logos/google-meet-2020.svg" alt="Google Meet Logo" width="20"> Google Meet: Plataforma para realizar videoconferencias y reuniones virtuales con el equipo de desarrollo.
+-  Trello: Plataforma para la gestión y organización de proyectos en equipo utilizando tableros y listas.
+-  Figma: Herramienta de diseño gráfico y prototipado para crear la interfaz de usuario de la plataforma.
+-  Slack: Plataforma de comunicación para mantener la colaboración y la comunicación en tiempo real dentro del equipo.
+-  Zoom: Plataforma para realizar videoconferencias y reuniones virtuales con el equipo de desarrollo.
+-  Google Meet: Plataforma para realizar videoconferencias y reuniones virtuales con el equipo de desarrollo.
 
 ## Metodología de Trabajo
 
